@@ -3,8 +3,10 @@ package com.JsfJPA.services;
 import com.JsfJPA.entities.User;
 import com.JsfJPA.entities.Quality;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -16,9 +18,12 @@ public class DataService {
     @PersistenceContext(unitName = "default")
     EntityManager em;
 
+    @Inject
+    Pbkdf2PasswordHash passwordHasher;
+
     @Transactional
     public User createUser(String name, String username, String password, String group){
-        User newUser = new User(name, username, password, group);
+        User newUser = new User(name, username, passwordHasher.generate(password.toCharArray()), group);
         em.persist(newUser);
         em.flush();
         return newUser;
