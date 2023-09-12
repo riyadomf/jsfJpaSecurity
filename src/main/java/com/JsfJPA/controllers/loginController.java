@@ -27,7 +27,7 @@ public class loginController implements Serializable{
     @NotEmpty
     private String username;
 
-    @NotEmpty
+//    @NotEmpty
     private String password;
 
     @Inject
@@ -83,7 +83,6 @@ public class loginController implements Serializable{
 
         if (optionalUser.isPresent()) {
             externalContext.getSessionMap().put("username", username);
-            externalContext.getSessionMap().put("password", password);
             externalContext.getSessionMap().put("OTP", "123456");
             externalContext.redirect(externalContext.getRequestContextPath() + "/otpPage.xhtml");
         }
@@ -95,7 +94,6 @@ public class loginController implements Serializable{
     public void verifyOtp() throws IOException {
         if(externalContext.getSessionMap().get("OTP").equals(userOtpCode)) {
             username = (String) externalContext.getSessionMap().get("username");
-            password = (String) externalContext.getSessionMap().get("password");
             execute();
         }
     }
@@ -117,7 +115,7 @@ public class loginController implements Serializable{
     private AuthenticationStatus processAuthentication () throws IOException {
         return securityContext.authenticate((HttpServletRequest) externalContext.getRequest(),
                 (HttpServletResponse) externalContext.getResponse(),
-                AuthenticationParameters.withParams().credential(new UsernamePasswordCredential(username, password)));
+                AuthenticationParameters.withParams().credential(new UsernamePasswordCredential(username, "guru")));
     }
 }
 

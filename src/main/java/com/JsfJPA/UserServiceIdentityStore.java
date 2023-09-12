@@ -21,9 +21,8 @@ public class UserServiceIdentityStore implements IdentityStore {
     public CredentialValidationResult validate(Credential credential) {
         UsernamePasswordCredential login = (UsernamePasswordCredential) credential;
         String username = login.getCaller();
-        String password = login.getPasswordAsString();
 
-        Optional<User> optionalUser = dataService.findByUsernameAndPassword(username, password);
+        Optional<User> optionalUser = dataService.getUser(username);
 
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
