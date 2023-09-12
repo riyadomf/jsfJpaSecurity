@@ -54,4 +54,17 @@ public class DataService {
                 .setParameter("userId", user.getId())
                 .getResultList();
     }
+
+    public Optional<User> findByUsernameAndPassword(String username, String password){
+        Optional<User> optionalUser = em.createNamedQuery("User.byUsername", User.class)
+                .setParameter("username", username)
+                .getResultList()
+                .stream()
+                .findFirst();
+
+        if (optionalUser.isPresent() && passwordHasher.verify(password.toCharArray(), optionalUser.get().getPassword())) {
+            return optionalUser;
+        }
+        return Optional.empty();
+    }
 }

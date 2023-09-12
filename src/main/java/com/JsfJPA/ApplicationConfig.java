@@ -6,11 +6,11 @@ import jakarta.security.enterprise.authentication.mechanism.http.CustomFormAuthe
 import jakarta.security.enterprise.authentication.mechanism.http.LoginToContinue;
 import jakarta.security.enterprise.identitystore.DatabaseIdentityStoreDefinition;
 
-@DatabaseIdentityStoreDefinition(
-        dataSourceLookup = "jdbc/NBR",
-        callerQuery = "SELECT user_password FROM users WHERE username = ?",
-        groupsQuery = "SELECT user_group FROM users WHERE username = ?"
-)
+//@DatabaseIdentityStoreDefinition(
+//        dataSourceLookup = "jdbc/NBR",
+//        callerQuery = "SELECT user_password FROM users WHERE username = ?",
+//        groupsQuery = "SELECT user_group FROM users WHERE username = ?"
+//)
 @CustomFormAuthenticationMechanismDefinition(
         loginToContinue = @LoginToContinue(
                 loginPage = "/login.xhtml",

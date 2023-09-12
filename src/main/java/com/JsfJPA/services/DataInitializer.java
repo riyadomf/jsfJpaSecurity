@@ -23,6 +23,7 @@ public class DataInitializer {
             dataService.createQuality("Good Leader", sally);
 
             dataService.createQuality("Dilligent", tom);
+
             dataService.createQuality("Responsible", tom);
             dataService.createQuality("Cares for his teammates", tom);
         }

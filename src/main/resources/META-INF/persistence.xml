@@ -7,10 +7,10 @@
     <jta-data-source>jdbc/NBR</jta-data-source>
 <!--    <class>com.JsfJPA.entities.User</class>-->
 <!--    <class>com.JsfJPA.entities.Quality</class>-->
-    <shared-cache-mode>NONE</shared-cache-mode>
+<!--    <shared-cache-mode>NONE</shared-cache-mode>-->
     <properties>
       <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
-      <property name="hibernate.show_sql" value="true" />
+<!--      <property name="hibernate.show_sql" value="true" />-->
     </properties>
   </persistence-unit>
 </persistence>

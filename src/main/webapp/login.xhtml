@@ -28,7 +28,7 @@
                             <p:message for="password"/>
 
                             <p:commandButton id="submit" update="@form" value="Login"
-                                             action="#{loginController.execute}" ajax="false"/>
+                                             action="#{loginController.verifyCredentials()}" ajax="false"/>
                         </h:panelGrid>
                     </h:form>
                 </div>

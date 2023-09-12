@@ -3,7 +3,9 @@ package com.JsfJPA.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -58,6 +60,19 @@ public class User implements Serializable {
     public String getGroup() {
         return group;
     }
+
+    public Set<String> getGroups() {
+        // Split the group string into individual groups and add them to a Set
+        Set<String> groupSet = new HashSet<>();
+        if (group != null && !group.isEmpty()) {
+            String[] groupsArray = group.split(",");
+            for (String group : groupsArray) {
+                groupSet.add(group.trim());
+            }
+        }
+        return groupSet;
+    }
+
 
     @Override
     public boolean equals(Object o) {
