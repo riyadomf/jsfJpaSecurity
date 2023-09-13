@@ -24,6 +24,7 @@ import java.util.Optional;
 @RequestScoped
 @Named
 public class loginController implements Serializable{
+
     @NotEmpty
     private String username;
 
@@ -42,17 +43,8 @@ public class loginController implements Serializable{
     @Inject
     private DataService dataService;
 
-    private String generatedOtpCode;
     private String userOtpCode;
-    private Integer secret = 30303030;
 
-    public String getGeneratedOtpCode() {
-        return generatedOtpCode;
-    }
-
-    public void setGeneratedOtpCode(String generatedOtpCode) {
-        this.generatedOtpCode = generatedOtpCode;
-    }
 
     public String getUserOtpCode() {
         return userOtpCode;
@@ -108,7 +100,7 @@ public class loginController implements Serializable{
                 facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Invalid Credentials", null));
                 break;
             case SUCCESS:
-                externalContext.redirect(externalContext.getRequestContextPath() + "/admins/index.xhtml");
+                externalContext.redirect(externalContext.getRequestContextPath() + "/app");
         }
     }
 

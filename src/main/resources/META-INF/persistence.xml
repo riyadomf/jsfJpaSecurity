@@ -4,7 +4,7 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
   <persistence-unit name="default" transaction-type="JTA">
-    <jta-data-source>jdbc/NBR</jta-data-source>
+    <jta-data-source>jdbc/eappeal</jta-data-source>
 <!--    <class>com.JsfJPA.entities.User</class>-->
 <!--    <class>com.JsfJPA.entities.Quality</class>-->
 <!--    <shared-cache-mode>NONE</shared-cache-mode>-->
