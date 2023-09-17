@@ -75,6 +75,7 @@ public class loginController implements Serializable{
 
         if (optionalUser.isPresent()) {
             externalContext.getSessionMap().put("username", username);
+            externalContext.getSessionMap().put("group", optionalUser.get().getGroup());
             externalContext.getSessionMap().put("OTP", "123456");
             externalContext.redirect(externalContext.getRequestContextPath() + "/otpPage.xhtml");
         }
@@ -90,7 +91,6 @@ public class loginController implements Serializable{
         }
     }
 
-
     public void execute() throws IOException {
         switch(processAuthentication()) {
             case SEND_CONTINUE:
@@ -100,7 +100,12 @@ public class loginController implements Serializable{
                 facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Invalid Credentials", null));
                 break;
             case SUCCESS:
-                externalContext.redirect(externalContext.getRequestContextPath() + "/app");
+                if (externalContext.getSessionMap().get("group").equals("admin"))
+                    externalContext.redirect(externalContext.getRequestContextPath() + "/admins");
+                else if (externalContext.getSessionMap().get("group").equals("user"))
+                    externalContext.redirect(externalContext.getRequestContextPath() + "/app");
+                else
+                    externalContext.redirect(externalContext.getRequestContextPath() + "index.xhtml");
         }
     }
 
