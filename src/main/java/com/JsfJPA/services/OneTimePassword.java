@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 public class OneTimePassword {
-    private static final Logger logger = Logger.getLogger(OneTimePassword.class.getName());
+//    private static final Logger logger = Logger.getLogger(OneTimePassword.class.getName());
 
     public static final String SECRET32 = "secret32";
     public static final String QR_URL = "url";

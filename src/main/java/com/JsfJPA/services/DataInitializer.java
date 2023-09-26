@@ -14,8 +14,8 @@ public class DataInitializer {
 
     public void execute(@Observes @Initialized(ApplicationScoped.class) Object event){
         if(dataService.getAllUsers().isEmpty()){
-            User sally = dataService.createUser("Sally", "Addams", "saddams", "password", "admin");
-            User tom = dataService.createUser("Tom", "Matthews", "tmatthews", "tmatthews", "user");
+            User sally = dataService.createUser("Sally", "Addams", "aman", "123456", "password", "admin");
+            User tom = dataService.createUser("Tom", "Matthews", "tmatthews", "123456", "tmatthews",  "user");
 
             dataService.createQuality("Wonderful", sally);
             dataService.createQuality("Team Player", sally);

@@ -3,7 +3,6 @@ package com.JsfJPA.controllers;
 import com.JsfJPA.entities.User;
 import com.JsfJPA.services.DataService;
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
@@ -13,7 +12,6 @@ import jakarta.security.enterprise.AuthenticationStatus;
 import jakarta.security.enterprise.SecurityContext;
 import jakarta.security.enterprise.authentication.mechanism.http.AuthenticationParameters;
 import jakarta.security.enterprise.credential.UsernamePasswordCredential;
-import jakarta.security.enterprise.identitystore.CredentialValidationResult;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotEmpty;
@@ -23,7 +21,7 @@ import java.util.Optional;
 
 @RequestScoped
 @Named
-public class loginController implements Serializable{
+public class LoginController{
 
     @NotEmpty
     private String username;

@@ -22,8 +22,8 @@ public class DataService {
     Pbkdf2PasswordHash passwordHasher;
 
     @Transactional
-    public User createUser(String firstName, String lastName, String username, String password, String group){
-        User newUser = new User(firstName, lastName, username, passwordHasher.generate(password.toCharArray()), group);
+    public User createUser(String firstName, String lastName, String username, String phoneNumber, String password, String group){
+        User newUser = new User(firstName, lastName, username, phoneNumber, passwordHasher.generate(password.toCharArray()), group);
         em.persist(newUser);
         em.flush();
         return newUser;

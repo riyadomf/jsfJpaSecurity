@@ -9,7 +9,7 @@
 <!--    <class>com.JsfJPA.entities.Quality</class>-->
 <!--    <shared-cache-mode>NONE</shared-cache-mode>-->
     <properties>
-      <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+      <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
 <!--      <property name="hibernate.show_sql" value="true" />-->
     </properties>
   </persistence-unit>

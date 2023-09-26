@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html  xmlns="http://www.w3.org/1999/xhtml"
        xmlns:h="http://xmlns.jcp.org/jsf/html"
        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -7,44 +11,129 @@
 
 <f:view>
    <h:head>
-      <title>Registration Form</title>
-      <!--    <h:outputStylesheet name="css/primeflex/styles/primeflex.css" />-->
-      <link href="https://cdn.jsdelivr.net/npm/primeflex@3.3.1/primeflex.min.css" rel="stylesheet"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <style type="text/css">
+         .label {
+            width: 20%;
+            padding: 4px;
+         }
+
+         .value {
+            width: 80%;
+            padding: 4px;
+         }
+
+         .grid {
+            width: 100%;
+         }
+
+         .error {
+            color: red;
+         }
+
+         .outputLabel {
+            font-weight: bold;
+         }
+
+         .grid {
+            width: 33%;
+            padding: 4px;
+         }
+      </style>
    </h:head>
 
    <h:body>
-      <h:form>
-         <h2>Registration Form</h2>
-         <div class="card">
+      <div class="card">
+         <h:form>
 
-            <div class="ui-fluid">
-               <div class="field">
-                  <p:outputLabel for="firstname"  value="Firstname"/>
-                  <p:inputText id="firstname" placeholder="Firstname" value="#{registrationController.firstName}"/>
-               </div>
-               <div class="field">
-                  <p:outputLabel for="lastname"  value="Lastname"/>
-                  <p:inputText id="lastname" placeholder="Lastname" value="#{registrationController.lastName}"/>
-               </div>
-               <div class="field">
-                  <p:outputLabel for="username"  value="Username"/>
-                  <p:inputText id="username" placeholder="Username" value="#{registrationController.username}"/>
-               </div>
-               <div class="field">
-                  <p:outputLabel for="password" value="Password"/>
-                  <p:inputText id="password" placeholder="Password" type="password" value="#{registrationController.password}"/>
-               </div>
+            <p:growl id="growl" sticky="true" showDetail="true"/>
 
-               <div class="field">
-                  <p:outputLabel for="group" value="Group"/>
-                  <p:inputText id="group" placeholder="Group"  value="#{registrationController.group}"/>
-               </div>
-               <p:commandButton value="Submit" ajax="false" action="#{registrationController.registerUser()}"/>
-            </div>
-         </div>
+            <p:wizard flowListener="#{registrationController.onFlowProcess}">
+               <p:tab id="contact" title="Contact">
+                   <p:panel header="Create a new account">
+                       <p:messages/>
+                       <h:panelGrid columns="2" columnClasses="label, value">
 
-      </h:form>
+                           <p:outputLabel value="Phone" for="phoneNumber" />
+                           <p:inputText id="phoneNumber"
+                                        value="#{registrationController.phoneNumber}"
+                                        required="true"
+                                        validatorMessage="Invalid phone number!">
+                           <f:validateRegex pattern="^(01)[\d+]{9}$"/>
+                           </p:inputText>
+                       </h:panelGrid>
+                   </p:panel>
+               </p:tab>
+
+                <p:tab id="otp" title="Otp">
+                    <p:panel header="Enter your OTP">
+                        <p:messages/>
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <p:inputText id="otpInput" value="#{registrationController.userOtp}" maxlength="6">
+                                <f:validateLength maximum="6" minimum="6" />
+                                <p:keyFilter mask="num"/>
+                            </p:inputText>
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+
+               <p:tab id="personal" title="Personal">
+                   <p:panel header="Personal information">
+                       <p:messages/>
+                       <h:panelGrid columns="2" columnClasses="label, value">
+                           <h:outputText value="Firstname: *"/>
+                           <p:inputText value="#{registrationController.firstName}" required="true" label="First Name"/>
+
+                           <h:outputText value="Lastname: *"/>
+                           <p:inputText value="#{registrationController.lastName}" required="true" label="Last Name"/>
+
+                           <h:outputText value="Username: *"/>
+                           <p:inputText value="#{registrationController.username}" required="true" label="Username"/>
+                       </h:panelGrid>
+                   </p:panel>
+               </p:tab>
+
+                <p:tab id="password" title="Password">
+                    <p:panel header="Password">
+                        <p:messages/>
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputLabel for="pwd1" value="Password: *" />
+                            <p:password id="pwd1" value="#{registrationController.password}" match="pwd2" label="Password" feedback="true" inline="true" required="true" autocomplete="off"/>
+
+                            <h:outputLabel for="pwd2" value="Confirm Password: *" />
+                            <p:password id="pwd2" label="Password Confirmation" feedback="true" inline="true" required="true"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+
+               <p:tab id="confirm" title="Confirmation">
+                  <p:panel header="Confirmation">
+                     <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                           <h:outputText value="Firstname: "/>
+                           <h:outputText value="#{registrationController.firstName}" styleClass="outputLabel"/>
+
+                           <h:outputText value="Lastname: "/>
+                           <h:outputText value="#{registrationController.lastName}" styleClass="outputLabel"/>
+
+                            <h:outputText value="Username: "/>
+                            <h:outputText value="#{registrationController.username}" styleClass="outputLabel"/>
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="2" columnClasses="label, value">
+
+                           <h:outputText value="Phone "/>
+                           <h:outputText value="#{registrationController.phoneNumber}" styleClass="outputLabel"/>
+
+                        </h:panelGrid>
+                     </h:panelGrid>
+
+                     <p:commandButton value="Submit" action="#{registrationController.registerUser}" update="growl" process="@this"/>
+                  </p:panel>
+               </p:tab>
+            </p:wizard>
+
+         </h:form>
+      </div>
    </h:body>
 </f:view>
 

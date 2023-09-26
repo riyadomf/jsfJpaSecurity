@@ -28,6 +28,9 @@ public class User implements Serializable {
     @Column(name = "username", nullable = false)
     private String username;
 
+    @Column(name = "phone_number", nullable = false)
+    private String phoneNumber;
+
     @Column(name = "user_password", nullable = false)
     private String password;
 
@@ -37,10 +40,11 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String firstName, String lastName, String username, String password, String group) {
+    public User(String firstName, String lastName, String username, String phoneNumber, String password, String group) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
+        this.phoneNumber = phoneNumber;
         this.password = password;
         this.group = group;
     }
@@ -71,6 +75,14 @@ public class User implements Serializable {
 
     public String getUsername() {
         return username;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getPassword() {
