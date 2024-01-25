@@ -103,7 +103,6 @@ public class RegistrationController implements Serializable {
     }
 
     public void sendOtp() throws IOException {
-//        LOGGER.info("This is an OTP " + externalContext.getSessionMap().get("OTP"));
         externalContext.getSessionMap().put("OTP", "123456");
     }
 

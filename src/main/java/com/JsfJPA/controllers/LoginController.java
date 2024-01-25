@@ -74,20 +74,21 @@ public class LoginController{
         if (optionalUser.isPresent()) {
             externalContext.getSessionMap().put("username", username);
             externalContext.getSessionMap().put("group", optionalUser.get().getGroup());
-            externalContext.getSessionMap().put("OTP", "123456");
-            externalContext.redirect(externalContext.getRequestContextPath() + "/otpPage.xhtml");
+//            externalContext.getSessionMap().put("OTP", "123456");
+//            externalContext.redirect(externalContext.getRequestContextPath() + "/otpPage.xhtml");
+            execute();
         }
         else {
             facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Invalid Credentials", null));
         }
     }
 
-    public void verifyOtp() throws IOException {
-        if(externalContext.getSessionMap().get("OTP").equals(userOtpCode)) {
-            username = (String) externalContext.getSessionMap().get("username");
-            execute();
-        }
-    }
+//    public void verifyOtp() throws IOException {
+//        if(externalContext.getSessionMap().get("OTP").equals(userOtpCode)) {
+//            username = (String) externalContext.getSessionMap().get("username");
+//            execute();
+//        }
+//    }
 
     public void execute() throws IOException {
         switch(processAuthentication()) {
