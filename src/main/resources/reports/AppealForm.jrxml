@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fbe5f198-7f3e-4a34-a2eb-e624fc640a04">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter" pageWidth="612" pageHeight="1008" columnWidth="542" leftMargin="35" rightMargin="35" topMargin="35" bottomMargin="35" uuid="fbe5f198-7f3e-4a34-a2eb-e624fc640a04">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
-	<style name="Base" isDefault="true" fontName="Nikosh" fontSize="8"/>
+	<style name="Base" isDefault="true" fontName="Nikosh" fontSize="10"/>
 	<parameter name="appealOfficeName" class="java.lang.String"/>
 	<parameter name="appealOfficeAddress" class="java.lang.String"/>
 	<parameter name="appealOfficeWebsite" class="java.lang.String"/>
@@ -243,52 +243,70 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="49" splitType="Stretch">
+		<band height="72" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<frame>
-				<reportElement x="0" y="0" width="570" height="40" uuid="c72e5b29-4837-4d9e-9cc5-dcd5e9c825ad"/>
+				<reportElement x="0" y="0" width="540" height="72" uuid="c72e5b29-4837-4d9e-9cc5-dcd5e9c825ad">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
 				<staticText>
-					<reportElement x="80" y="0" width="400" height="20" uuid="91b1f768-b093-441b-842c-33b43ace5495"/>
+					<reportElement x="70" y="0" width="400" height="24" uuid="91b1f768-b093-441b-842c-33b43ace5495">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<text><![CDATA[গণপ্রজাতন্ত্রী বাংলাদেশ সরকার
 অভ্যন্তরীণ সম্পদ বিভাগ]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="80" y="20" width="400" height="20" uuid="4d8dbc70-c990-43d3-8a91-c59a527dbc3e"/>
+					<reportElement x="70" y="24" width="400" height="24" uuid="4d8dbc70-c990-43d3-8a91-c59a527dbc3e">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$P{appealOfficeName} + "\n" + $P{appealOfficeAddress}]]></textFieldExpression>
 				</textField>
 				<textField hyperlinkType="Reference">
-					<reportElement x="230" y="40" width="100" height="10" uuid="54561991-9c24-4cde-beaa-004132c364f0"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<reportElement x="170" y="48" width="200" height="12" uuid="54561991-9c24-4cde-beaa-004132c364f0">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
 						<font fontName="TimesNewRoman"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$P{appealOfficeWebsite}]]></textFieldExpression>
 					<hyperlinkReferenceExpression><![CDATA[$P{appealOfficeWebsite}]]></hyperlinkReferenceExpression>
 				</textField>
+				<staticText>
+					<reportElement x="0" y="-10" width="40" height="20" uuid="df186576-d311-4c04-a6c3-0d9f9f541597"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[ফরম-১]]></text>
+				</staticText>
 			</frame>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="28" splitType="Stretch">
+		<band height="32" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="20" y="0" width="550" height="10" uuid="e9b1a258-ec6a-4378-892e-21c4b4104d1c"/>
+				<reportElement x="25" y="0" width="514" height="12" uuid="e9b1a258-ec6a-4378-892e-21c4b4104d1c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font isUnderline="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{appealSubject}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="280" y="15" width="30" height="10" uuid="ae6deb02-538e-4258-9044-e3b2fba24daa">
+				<reportElement x="270" y="16" width="40" height="12" uuid="ae6deb02-538e-4258-9044-e3b2fba24daa">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
 				<text><![CDATA[আপিল নং]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="310" y="12" width="260" height="10" uuid="eb45b910-ff8b-4fad-838c-5fec9a651547">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				<reportElement x="310" y="14" width="230" height="13" uuid="eb45b910-ff8b-4fad-838c-5fec9a651547">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25" lineStyle="Dashed"/>
@@ -303,14 +321,17 @@
 				<textFieldExpression><![CDATA[$P{appealNumber}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="0" width="20" height="10" uuid="ff71795a-ab56-41ab-88ac-4841469aa721">
+				<reportElement x="0" y="0" width="25" height="12" uuid="ff71795a-ab56-41ab-88ac-4841469aa721">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
 				<text><![CDATA[বিষয়ঃ]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="27" width="570" height="1" uuid="5c8e02e4-049f-40d4-a211-d266313a50f0">
+				<reportElement x="0" y="31" width="540" height="1" uuid="5c8e02e4-049f-40d4-a211-d266313a50f0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -320,31 +341,34 @@
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="41" splitType="Stretch">
+		<band height="75" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="10" y="0" width="180" height="10" uuid="6ae956b7-26ea-4df2-bae2-3dbfd8352890">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<reportElement x="10" y="0" width="180" height="24" uuid="6ae956b7-26ea-4df2-bae2-3dbfd8352890">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[আবেদনকারী/আপিলকারীর নাম ও ঠিকানা (মোবাইল নম্বর ও ই-মেইল সহ)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="20" width="180" height="10" uuid="9f16f2b2-6d93-4bab-aa97-2e4c9faeee8f">
+				<reportElement x="10" y="36" width="180" height="24" uuid="9f16f2b2-6d93-4bab-aa97-2e4c9faeee8f">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[রেসপনডেন্ট/প্রতিপক্ষের নাম ও ঠিকানা (মোবাইল নম্বর ও ই-মেইল সহ) ]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="40" width="570" height="1" uuid="66fb9296-981d-4c78-bb85-b34f59dbd5a5"/>
+				<reportElement x="1" y="74" width="540" height="1" uuid="66fb9296-981d-4c78-bb85-b34f59dbd5a5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.3"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="200" y="0" width="370" height="20" uuid="0b8fa5a5-1733-47c1-b2c0-0f17834214ed">
+				<reportElement x="200" y="0" width="340" height="36" uuid="0b8fa5a5-1733-47c1-b2c0-0f17834214ed">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -352,287 +376,311 @@
 				<textFieldExpression><![CDATA[$P{appellantNameAddressMobileEmail}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="200" y="20" width="370" height="20" uuid="ab1bb348-fc08-442c-9a95-a2ade72618ec">
+				<reportElement x="200" y="36" width="340" height="36" uuid="ab1bb348-fc08-442c-9a95-a2ade72618ec">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$P{respondentNameAddressMobileEmail}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="190a2f09-e29a-4388-84a0-21f5252efdd3">
+				<reportElement x="190" y="0" width="10" height="12" uuid="190a2f09-e29a-4388-84a0-21f5252efdd3">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="20" width="10" height="10" uuid="2bea272c-8440-43b2-8ff5-bb550ff99225"/>
+				<reportElement x="190" y="36" width="10" height="12" uuid="2bea272c-8440-43b2-8ff5-bb550ff99225">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="0bc784f2-ac54-4504-a507-52c786d3f191">
+				<reportElement x="0" y="0" width="10" height="12" uuid="0bc784f2-ac54-4504-a507-52c786d3f191">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<text><![CDATA[১। ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="20" width="10" height="10" uuid="f78ff72c-9202-4aae-a97e-55c8d51cb778"/>
+				<reportElement x="0" y="36" width="10" height="12" uuid="f78ff72c-9202-4aae-a97e-55c8d51cb778">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<text><![CDATA[২। ]]></text>
 			</staticText>
 		</band>
-		<band height="31">
+		<band height="51">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="10" y="0" width="180" height="30" uuid="d0341a69-2500-4201-8d49-5b0661946ab0">
+				<reportElement x="10" y="0" width="180" height="48" uuid="d0341a69-2500-4201-8d49-5b0661946ab0">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[শুল্ক আরোপ/দাবী/পণ্য বাজেয়াপ্ত করন জনিত বা অর্থদন্ড আদেশ ইত্যাদি বিষয় যাহা হতে আপিলের তর্কিত বিষয়ের সূত্রপাত হয়েছে উহা কোন কাস্টমস বা ভ্যাট ও এক্সাইজ কমিশনারেট এর বা তদ্দীন এর বর্ণনা]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="30" width="570" height="1" uuid="a88e4809-8f89-4006-9aea-d8c47fa6bd93"/>
+				<reportElement x="1" y="50" width="540" height="1" uuid="a88e4809-8f89-4006-9aea-d8c47fa6bd93">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.3"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="200" y="0" width="370" height="20" uuid="da96e153-5cf1-4753-9601-83fe75630451">
+				<reportElement x="200" y="0" width="340" height="48" uuid="da96e153-5cf1-4753-9601-83fe75630451">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$P{subjectOfAllegation}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="b9e35916-3f7a-4b9a-b6e4-970c92be50ca"/>
+				<reportElement x="190" y="0" width="10" height="12" uuid="b9e35916-3f7a-4b9a-b6e4-970c92be50ca">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="b2d1ff72-963b-476d-bc48-9c7f43d05eb1"/>
+				<reportElement x="0" y="0" width="10" height="12" uuid="b2d1ff72-963b-476d-bc48-9c7f43d05eb1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<text><![CDATA[৩। ]]></text>
 			</staticText>
 		</band>
-		<band height="31">
+		<band height="39">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="10" y="0" width="180" height="30" uuid="b6abfbc9-50b7-4128-97fc-888a99a9b66a">
+				<reportElement x="10" y="0" width="180" height="36" uuid="b6abfbc9-50b7-4128-97fc-888a99a9b66a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[যে অভিযোগকৃত আদেশের বিরুদ্ধে আপিল করা হয়েছে উহা প্রদানকারী কর্তৃপক্ষের নাম ও ঠিকানা]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="30" width="570" height="1" uuid="6f37b005-0ffe-4e5d-9968-e1f54f1a258f"/>
+				<reportElement x="1" y="38" width="540" height="1" uuid="6f37b005-0ffe-4e5d-9968-e1f54f1a258f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.3"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="200" y="0" width="370" height="30" uuid="a310052b-c96e-4ca1-9494-25ecf6ea0a5e"/>
+				<reportElement x="200" y="0" width="340" height="36" uuid="a310052b-c96e-4ca1-9494-25ecf6ea0a5e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$P{respondentNameAddressMobileEmail}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="31ee4d10-9ee7-4719-ab3b-1701d8b14179"/>
+				<reportElement x="190" y="0" width="10" height="12" uuid="31ee4d10-9ee7-4719-ab3b-1701d8b14179">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="8dfefbdb-74f0-4397-b7a8-0af54f4037ec"/>
+				<reportElement x="0" y="0" width="10" height="12" uuid="8dfefbdb-74f0-4397-b7a8-0af54f4037ec">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<text><![CDATA[৪। ]]></text>
 			</staticText>
 		</band>
-		<band height="61">
+		<band height="75">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="10" y="0" width="180" height="10" uuid="25a60a7f-acea-4ce2-9935-5a347693f3aa">
+				<reportElement x="10" y="0" width="180" height="12" uuid="25a60a7f-acea-4ce2-9935-5a347693f3aa">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(ক) মূল বিচারাদেশ নং]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="60" width="570" height="1" uuid="788e8bf4-40e0-4aac-beb9-185c9754fa05"/>
+				<reportElement x="0" y="74" width="540" height="1" uuid="788e8bf4-40e0-4aac-beb9-185c9754fa05">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.3"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="63f2afcb-d91a-4e96-ac71-643fcc39b565"/>
+				<reportElement x="0" y="0" width="10" height="12" uuid="63f2afcb-d91a-4e96-ac71-643fcc39b565">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<text><![CDATA[৫। ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="30" width="370" height="10" uuid="a1cdcabf-a7dc-4332-9793-721d5bf714e6"/>
+				<reportElement x="200" y="36" width="340" height="12" uuid="a1cdcabf-a7dc-4332-9793-721d5bf714e6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{orderNumber}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="30" width="10" height="10" uuid="ab21efe1-86da-4761-a78f-3ea46599e30e"/>
+				<reportElement x="190" y="36" width="10" height="12" uuid="ab21efe1-86da-4761-a78f-3ea46599e30e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="40" width="370" height="10" uuid="08a1a2b6-ffa7-4514-bf88-e30a13dcefef"/>
+				<reportElement x="200" y="48" width="340" height="12" uuid="08a1a2b6-ffa7-4514-bf88-e30a13dcefef">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{issueDate}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="40" width="10" height="10" uuid="258a0818-780a-460d-8f2e-45f37efa8325"/>
+				<reportElement x="190" y="60" width="10" height="12" uuid="258a0818-780a-460d-8f2e-45f37efa8325">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="50" width="370" height="10" uuid="de18435c-fb8f-4024-afeb-dedbe83013e6"/>
+				<reportElement x="200" y="60" width="340" height="12" uuid="de18435c-fb8f-4024-afeb-dedbe83013e6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{receivedDate}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="50" width="10" height="10" uuid="36ed2fab-fc6a-43d8-a1c4-a971e2693d4a"/>
+				<reportElement x="190" y="48" width="10" height="12" uuid="36ed2fab-fc6a-43d8-a1c4-a971e2693d4a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="10" width="180" height="10" uuid="5c936370-0335-489b-b831-d57cb58bb69a"/>
+				<reportElement x="10" y="12" width="180" height="12" uuid="5c936370-0335-489b-b831-d57cb58bb69a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(খ) জারীর তারিখ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="20" width="180" height="10" uuid="ede59548-ef60-46a7-b641-99e23b1b1aa4"/>
+				<reportElement x="10" y="24" width="180" height="12" uuid="ede59548-ef60-46a7-b641-99e23b1b1aa4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(গ) প্রাপ্তির তারিখ (লেখা প্রমানসহ)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="30" width="180" height="10" uuid="e233e5b0-1808-411b-a328-65923c886bb4"/>
+				<reportElement x="10" y="36" width="180" height="12" uuid="e233e5b0-1808-411b-a328-65923c886bb4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(ঘ) আপিল আদেশ নং (যদি থাকে)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="40" width="180" height="10" uuid="8792e3d5-e6fb-4b81-877f-923ccc254681"/>
+				<reportElement x="10" y="48" width="180" height="12" uuid="8792e3d5-e6fb-4b81-877f-923ccc254681">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(ঙ) জারীর তারিখ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="50" width="180" height="11" uuid="98df289a-f816-4e76-9d92-fa7001bc9a46"/>
+				<reportElement x="190" y="0" width="10" height="12" uuid="a85bbc79-f2b1-4232-b1f9-de5f9bc64f03">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="12" width="10" height="12" uuid="7ff01a1f-a0bc-4e31-a5c7-7752840eff0f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="24" width="10" height="12" uuid="a11529d5-a344-4587-9382-33d2f00cd6c6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="60" width="180" height="12" uuid="98df289a-f816-4e76-9d92-fa7001bc9a46">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(চ) প্রাপ্তির তারিখ (লেখা প্রমানসহ)]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="a85bbc79-f2b1-4232-b1f9-de5f9bc64f03"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[: ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="190" y="10" width="10" height="10" uuid="7ff01a1f-a0bc-4e31-a5c7-7752840eff0f"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[: ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="190" y="20" width="10" height="10" uuid="a11529d5-a344-4587-9382-33d2f00cd6c6"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[: ]]></text>
-			</staticText>
-		</band>
-		<band height="41">
-			<staticText>
-				<reportElement x="10" y="0" width="180" height="20" uuid="bca33a2f-6da8-4cb4-a6b8-15b1dca7b13a">
+			<textField>
+				<reportElement x="200" y="0" width="340" height="12" uuid="ef654dda-40a2-4308-a351-d71d9e03d68c">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Nikosh"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{orderNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="12" width="340" height="12" uuid="283bd407-8b95-4323-b0b3-a335e34d5399">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Nikosh"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{issueDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="24" width="340" height="12" uuid="4150cf76-ceea-4990-9a84-465daf07bb65">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Nikosh"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{receivedDate}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="51">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="10" y="0" width="180" height="24" uuid="bca33a2f-6da8-4cb4-a6b8-15b1dca7b13a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[যে ঠিকানায় আপিলকারী/আবেদনকারীর প্রতি নোটিশ জারী করা হবে (পূর্ণাঙ্গ ঠিকানা, মোবাইল নম্বর ও ই-মেইল সহ)]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="0" width="370" height="40" uuid="c2a92606-ba8f-4c2a-bde0-62555c470752"/>
+				<reportElement x="200" y="0" width="340" height="48" uuid="c2a92606-ba8f-4c2a-bde0-62555c470752">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$P{contactNameAddressMobileEmail}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="2e6837b2-8889-46ca-9a11-9bab28b12d33"/>
+				<reportElement x="0" y="0" width="10" height="12" uuid="2e6837b2-8889-46ca-9a11-9bab28b12d33">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<text><![CDATA[৬। ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="e92c7796-7e39-449a-b0bd-e2285058aaa0">
+				<reportElement x="190" y="0" width="10" height="12" uuid="e92c7796-7e39-449a-b0bd-e2285058aaa0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="40" width="570" height="1" uuid="03564d77-15bb-49ba-9de1-c2b40128d7e5">
+				<reportElement x="0" y="50" width="540" height="1" uuid="03564d77-15bb-49ba-9de1-c2b40128d7e5">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.3"/>
-				</graphicElement>
-			</line>
-		</band>
-		<band height="41">
-			<staticText>
-				<reportElement x="10" y="0" width="180" height="20" uuid="68e56d81-2d1e-41ae-b8de-fb3c2ebe6f1b">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[যে ঠিকানায় আপিলকারী/আবেদনকারীর ব্যবসায়িক প্রতিষ্ঠান/শিল্প কারখানা চালু আছে (মোবাইল নম্বর ও ই-মেইল সহ)]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="200" y="0" width="370" height="40" uuid="ab872613-3b06-46ca-8e19-c7e6f4474197"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{companyNameAddressMobileEmail}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="d4da7ee8-b1d7-45bb-82f7-5f26d56b164b"/>
-				<text><![CDATA[৭। ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="4b687a22-8101-4fff-a634-06aa0ce2e5f4">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[: ]]></text>
-			</staticText>
-			<line>
-				<reportElement x="0" y="40" width="570" height="1" uuid="0144a04b-3dd3-4939-a6c8-5b7f243afc61">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.3"/>
-				</graphicElement>
-			</line>
-		</band>
-		<band height="31">
-			<staticText>
-				<reportElement x="10" y="0" width="180" height="20" uuid="d3dde02a-abc4-4e9d-b8f5-829b489fdb34">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[যে ঠিকানায় রেসপনডেন্ট/প্রতিপক্ষের নিকট নোটিশ পাঠাতে হবে (মোবাইল নম্বর ও ই-মেইল সহ)]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="200" y="0" width="370" height="30" uuid="c636de15-a85c-40ba-8c9e-280804511074">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{respondentNameAddressMobileEmail}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="0e6051f2-37a6-42a3-a7b6-50cc37d933cb"/>
-				<text><![CDATA[৮। ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="b76ac73f-c0e0-4b94-9dc6-47580aaa9fed">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[: ]]></text>
-			</staticText>
-			<line>
-				<reportElement x="0" y="30" width="570" height="1" uuid="80624071-82fe-4265-82b6-afe8125dc2cb">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.3"/>
@@ -640,66 +688,170 @@
 			</line>
 		</band>
 		<band height="51">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="10" y="0" width="180" height="10" uuid="2928a039-b085-4fc9-88f1-9b8f3b954290">
+				<reportElement x="10" y="0" width="180" height="48" uuid="68e56d81-2d1e-41ae-b8de-fb3c2ebe6f1b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[যে ঠিকানায় আপিলকারী/আবেদনকারীর ব্যবসায়িক প্রতিষ্ঠান/শিল্প কারখানা চালু আছে (মোবাইল নম্বর ও ই-মেইল সহ)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="0" width="340" height="48" uuid="ab872613-3b06-46ca-8e19-c7e6f4474197"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{companyNameAddressMobileEmail}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="10" height="12" uuid="d4da7ee8-b1d7-45bb-82f7-5f26d56b164b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[৭। ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="10" height="12" uuid="4b687a22-8101-4fff-a634-06aa0ce2e5f4">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="50" width="540" height="1" uuid="0144a04b-3dd3-4939-a6c8-5b7f243afc61">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.3"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="39">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="10" y="0" width="180" height="24" uuid="d3dde02a-abc4-4e9d-b8f5-829b489fdb34">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[যে ঠিকানায় রেসপনডেন্ট/প্রতিপক্ষের নিকট নোটিশ পাঠাতে হবে (মোবাইল নম্বর ও ই-মেইল সহ)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="0" width="340" height="36" uuid="c636de15-a85c-40ba-8c9e-280804511074">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{respondentNameAddressMobileEmail}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="10" height="12" uuid="0e6051f2-37a6-42a3-a7b6-50cc37d933cb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[৮। ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="10" height="12" uuid="b76ac73f-c0e0-4b94-9dc6-47580aaa9fed">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="38" width="540" height="1" uuid="80624071-82fe-4265-82b6-afe8125dc2cb">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.3"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="63">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="10" y="0" width="180" height="12" uuid="2928a039-b085-4fc9-88f1-9b8f3b954290">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[আপিলে দাবীর পরিমাণ (টাকায়):]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="50" width="570" height="1" uuid="f11a90d2-57a6-4c02-9eb3-2266409fbcd2">
+				<reportElement x="0" y="62" width="540" height="1" uuid="f11a90d2-57a6-4c02-9eb3-2266409fbcd2">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.3"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="f2b687f2-b8a6-4a1c-931b-39ec0078c0c6"/>
+				<reportElement x="0" y="0" width="10" height="12" uuid="f2b687f2-b8a6-4a1c-931b-39ec0078c0c6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<text><![CDATA[৯। ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="30" width="370" height="10" uuid="0088bb34-7bc4-4840-9d35-ffaf54819098"/>
+				<reportElement x="200" y="36" width="340" height="12" uuid="0088bb34-7bc4-4840-9d35-ffaf54819098">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{depositAmount}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="30" width="10" height="10" uuid="57099c4d-89cf-43ad-b128-4b5d8ec85916"/>
+				<reportElement x="190" y="36" width="10" height="12" uuid="57099c4d-89cf-43ad-b128-4b5d8ec85916">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="40" width="370" height="10" uuid="2cff816c-d9ce-4f40-a002-b21dea345393"/>
+				<reportElement x="200" y="48" width="340" height="12" uuid="2cff816c-d9ce-4f40-a002-b21dea345393">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{valueOfGoodsForServiceAmount}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="40" width="10" height="10" uuid="e16106a3-5448-470a-aadb-1a22ed0cb1d6"/>
+				<reportElement x="190" y="48" width="10" height="12" uuid="e16106a3-5448-470a-aadb-1a22ed0cb1d6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="10" width="180" height="10" uuid="b201ca20-0889-4767-a9d3-6a25e7e75803"/>
+				<reportElement x="10" y="12" width="180" height="12" uuid="b201ca20-0889-4767-a9d3-6a25e7e75803">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(ক) জড়িত/শুল্ক/ভ্যাট/আবগারী ও অন্যান্য করের পরিমাণ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="20" width="180" height="10" uuid="becaa2f6-ff76-439d-8139-995f21313fc8"/>
+				<reportElement x="10" y="24" width="180" height="12" uuid="becaa2f6-ff76-439d-8139-995f21313fc8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(খ) জড়িত অর্থদন্ডের পরিমাণ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="30" width="180" height="10" uuid="979f7a07-f2c3-46c2-aef3-da6d8b20bbd2"/>
+				<reportElement x="10" y="36" width="180" height="12" uuid="979f7a07-f2c3-46c2-aef3-da6d8b20bbd2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(গ) বিমোচন জরিমানার পরিমাণ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="40" width="180" height="10" uuid="1237d137-976e-479f-b755-eea4c23a6286"/>
+				<reportElement x="10" y="48" width="180" height="12" uuid="1237d137-976e-479f-b755-eea4c23a6286">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(ঘ) সংশ্লিষ্ট আপিলে জড়িত পণ্য/সেবার মূল্য]]></text>
 			</staticText>
@@ -709,155 +861,214 @@
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="10" width="10" height="10" uuid="f4276f47-af52-4aec-b456-3a98afd621d9"/>
+				<reportElement x="190" y="12" width="10" height="12" uuid="f4276f47-af52-4aec-b456-3a98afd621d9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="20" width="10" height="10" uuid="3cd1b9b6-d7ac-41c8-9a46-b2eee3f2ed6c"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[: ]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="200" y="10" width="370" height="10" uuid="8db9eafb-33b5-4aa1-ad40-b12b4d2963cf"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{dutyTaxAmount}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="ee9924bf-1360-45de-93ae-9987a1adcfc7">
+				<reportElement x="190" y="24" width="10" height="12" uuid="3cd1b9b6-d7ac-41c8-9a46-b2eee3f2ed6c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="20" width="370" height="10" uuid="45ca3b59-7396-4dba-babc-386075c49ab6"/>
+				<reportElement x="200" y="12" width="340" height="12" uuid="8db9eafb-33b5-4aa1-ad40-b12b4d2963cf">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{dutyTaxAmount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="190" y="0" width="10" height="12" uuid="ee9924bf-1360-45de-93ae-9987a1adcfc7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="24" width="340" height="12" uuid="45ca3b59-7396-4dba-babc-386075c49ab6">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$P{fineAmount}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="200" y="0" width="370" height="10" uuid="affba14c-15c2-4cdb-b16c-8c3a93dd1130"/>
+				<reportElement x="200" y="0" width="340" height="12" uuid="affba14c-15c2-4cdb-b16c-8c3a93dd1130">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$P{totalAmount}]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="91">
+		<band height="111">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="10" y="0" width="180" height="20" uuid="9c26fec0-d329-4764-bfb4-6ba829a64f16">
+				<reportElement x="14" y="0" width="224" height="24" uuid="9c26fec0-d329-4764-bfb4-6ba829a64f16">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[(ক) দি কাস্টমস এ্যাক্ট, ১৯৬৯ এর ১৯৪ ধারা অনুযায়ী জমাকৃত টাকা/ব্যাংক গ্যারান্টি/সিকিউরিটি বন্ডের পরিমাণ (লেখ্য প্রমানসহ)]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="90" width="570" height="1" uuid="aa68c81d-1310-4565-b747-7a8600806f3b">
+				<reportElement x="0" y="110" width="540" height="1" uuid="aa68c81d-1310-4565-b747-7a8600806f3b">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.3"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="a61bc297-f5ce-452e-a29b-247b8b505d30"/>
+				<reportElement x="0" y="0" width="14" height="12" uuid="a61bc297-f5ce-452e-a29b-247b8b505d30">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<text><![CDATA[১০। ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="0" width="370" height="20" uuid="0480600f-e82e-4b0c-909c-5a452073bd46"/>
+				<reportElement x="248" y="0" width="290" height="24" uuid="0480600f-e82e-4b0c-909c-5a452073bd46">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{appealClaimAmount}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="20" width="10" height="10" uuid="7e40d8a9-9d53-405b-b14b-7e6ae993c12c"/>
+				<reportElement x="210" y="24" width="10" height="12" uuid="7e40d8a9-9d53-405b-b14b-7e6ae993c12c">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="40" width="370" height="30" uuid="ed04eac1-fe25-46fb-a0bd-0232f1f274e3"/>
+				<reportElement x="248" y="48" width="290" height="36" uuid="ed04eac1-fe25-46fb-a0bd-0232f1f274e3">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{appealClaimAmount}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="40" width="10" height="10" uuid="dd1ea4c5-8dc6-40bc-80b5-8aa1d917e838"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[: ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="20" width="180" height="20" uuid="3b4b820e-b377-4f17-8bfe-36a15adf70f7"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[(খ) মূল্য সংযোজন কর আইন, ১৯৯১ এর ৪২(২) ধারা অনুযায়ী জমাকৃত টাকা/ব্যাংক গ্যারান্টি/সিকিউরিটি বন্ডের পরিমাণ (লেখ্য প্রমানসহ)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="40" width="180" height="30" uuid="93cefcdf-d11c-4005-8227-4e1ec59f4de7"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[(গ) মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২ এর ধারা ১২২ (২) অনুযায়ী (এক লক্ষজমাকৃত টাকা/ব্যাংক গ্যারান্টি/সিকিউরিটি বন্ডের পরিমাণ (লেখ্য প্রমানসহ) ট্রেজারী চালান নং-]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="a74881ba-e975-4607-8083-b3f11e4d2675"/>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<text><![CDATA[: ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="190" y="0" width="10" height="10" uuid="72e14a18-458e-4c9d-b8ed-aac1d4265245">
+				<reportElement x="238" y="48" width="10" height="12" uuid="dd1ea4c5-8dc6-40bc-80b5-8aa1d917e838">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="70" width="180" height="20" uuid="a0a1b681-08ab-4228-a585-d6fe0c1c8d66"/>
+				<reportElement x="14" y="24" width="224" height="24" uuid="3b4b820e-b377-4f17-8bfe-36a15adf70f7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[(খ) মূল্য সংযোজন কর আইন, ১৯৯১ এর ৪২(২) ধারা অনুযায়ী জমাকৃত টাকা/ব্যাংক গ্যারান্টি/সিকিউরিটি বন্ডের পরিমাণ (লেখ্য প্রমানসহ)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="48" width="224" height="36" uuid="93cefcdf-d11c-4005-8227-4e1ec59f4de7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[(গ) মূল্য সংযোজন কর ও সম্পূরক শুল্ক আইন, ২০১২ এর ধারা ১২২ (২) অনুযায়ী (এক লক্ষজমাকৃত টাকা/ব্যাংক গ্যারান্টি/সিকিউরিটি বন্ডের পরিমাণ (লেখ্য প্রমানসহ) ট্রেজারী চালান নং-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="0" width="10" height="12" uuid="72e14a18-458e-4c9d-b8ed-aac1d4265245">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="84" width="224" height="24" uuid="a0a1b681-08ab-4228-a585-d6fe0c1c8d66">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[ঘ) আবগারী ও লবন আইন, ১৯৪৪ এর ৩৫ (১) এর ধারা অনুযায়ী
 জমাকৃত টাকা/ব্যাংক গ্যারান্টি/সিকিউরিটি বন্ডের পরিমাণ (লেখ্য প্রমাণসহ)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="70" width="10" height="10" uuid="501ca44d-b895-493d-8ce0-d3845fae6db5"/>
+				<reportElement x="238" y="84" width="10" height="12" uuid="501ca44d-b895-493d-8ce0-d3845fae6db5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="70" width="370" height="20" uuid="c3565904-d526-4f23-9e48-76df22b66c54"/>
+				<reportElement x="248" y="84" width="290" height="24" uuid="c3565904-d526-4f23-9e48-76df22b66c54">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$P{appealClaimAmount}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="200" y="20" width="370" height="20" uuid="5c336cfa-705b-4b2b-8173-24732d2ede48"/>
+				<reportElement x="248" y="24" width="290" height="24" uuid="5c336cfa-705b-4b2b-8173-24732d2ede48">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{appealClaimAmount}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="238" y="24" width="10" height="12" uuid="6de3caf9-9466-464e-9abe-b29c300f1f42">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[: ]]></text>
+			</staticText>
 		</band>
-		<band height="21">
+		<band height="27">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="10" y="0" width="561" height="20" uuid="c9754ab1-9333-4013-a7fb-ae55fe3b1f13"/>
+				<reportElement x="14" y="0" width="526" height="24" uuid="c9754ab1-9333-4013-a7fb-ae55fe3b1f13">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textFieldExpression><![CDATA["আপিল আবেদনের সাথে ট্রেজারী চালানের মাধ্যমে জমাকৃত" + "\n" + "ফি (৩০০/-) টাকা/ (১২০০/-) টাকা (লেখ্য প্রমানসহ) নং ট্রেজারী চালান নং-  " + $P{applicationFeeNumber} +  " , তারিখ-  " + $P{applicationFeeDate} +" খ্রিঃ"]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="20" width="570" height="1" uuid="ef826e72-bd00-41c6-a2b9-63d70c523396">
+				<reportElement x="0" y="26" width="540" height="1" uuid="ef826e72-bd00-41c6-a2b9-63d70c523396">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.3"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="4cd1f555-13d5-444b-ba5e-b2eb13929ccd"/>
+				<reportElement x="0" y="0" width="14" height="12" uuid="4cd1f555-13d5-444b-ba5e-b2eb13929ccd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<text><![CDATA[১১। ]]></text>
 			</staticText>
 		</band>
-		<band height="41">
+		<band height="51">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="0" y="0" width="10" height="10" uuid="c69395f8-2eeb-43ab-8505-6808e9e28c84"/>
+				<reportElement x="0" y="0" width="14" height="12" uuid="c69395f8-2eeb-43ab-8505-6808e9e28c84">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<text><![CDATA[১২। ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="0" width="200" height="40" uuid="3bafbcc9-8be0-4d69-bb1d-3d0f49fd749a">
+				<reportElement x="14" y="0" width="256" height="48" uuid="3bafbcc9-8be0-4d69-bb1d-3d0f49fd749a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
@@ -868,19 +1079,21 @@
 ]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="40" width="570" height="1" uuid="8614a735-92a9-4cfc-aba9-e2f72cf88749">
+				<reportElement x="0" y="50" width="540" height="1" uuid="8614a735-92a9-4cfc-aba9-e2f72cf88749">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.3"/>
 				</graphicElement>
 			</line>
 		</band>
-		<band height="50">
+		<band height="56">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="180" y="0" width="198" height="10" uuid="a08c87e2-2b74-4d83-9bea-1bca2ec4aff0">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<reportElement x="180" y="0" width="198" height="14" uuid="a08c87e2-2b74-4d83-9bea-1bca2ec4aff0">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="false" isUnderline="true"/>
@@ -888,13 +1101,15 @@
 				<text><![CDATA[সত্যপাঠ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="10" width="10" height="10" uuid="1c5dd49f-96ce-4311-bc98-e0fb1feda036">
+				<reportElement x="0" y="14" width="14" height="12" uuid="1c5dd49f-96ce-4311-bc98-e0fb1feda036">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<text><![CDATA[১৩। ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="10" y="10" width="560" height="10" uuid="43436c39-f0c4-40a8-a863-60706cfff307">
+				<reportElement x="14" y="14" width="526" height="12" uuid="43436c39-f0c4-40a8-a863-60706cfff307">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -903,16 +1118,16 @@
 				<textFieldExpression><![CDATA["আমি <i>" + $P{appellantName} + "</i> আপিলকারী/আবেদনকারী এতদ্বারা ঘোষণা করিতেছি যে, উপরে উল্লিখিত হেতুবাদ সমূহ আমার জানামতে এবং বিশ্বাসমতে সত্য।"]]></textFieldExpression>
 			</textField>
 			<frame>
-				<reportElement x="0" y="20" width="571" height="30" uuid="d82e76f4-464c-416d-a98a-cd3b4793f75f"/>
+				<reportElement x="0" y="26" width="540" height="30" uuid="d82e76f4-464c-416d-a98a-cd3b4793f75f"/>
 				<staticText>
-					<reportElement x="0" y="0" width="15" height="30" uuid="05fd9f93-a469-4799-ae45-e98e0982c5a1">
+					<reportElement x="0" y="0" width="17" height="30" uuid="05fd9f93-a469-4799-ae45-e98e0982c5a1">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle"/>
 					<text><![CDATA[অদ্য]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="15" y="8" width="25" height="15" uuid="b8a8adfc-c5a5-4da8-adfa-b51d528469f2">
+					<reportElement x="17" y="8" width="25" height="15" uuid="b8a8adfc-c5a5-4da8-adfa-b51d528469f2">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box>
@@ -928,14 +1143,14 @@
 					<textFieldExpression><![CDATA[$P{appealYear}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="40" y="0" width="20" height="30" uuid="2db72ab8-e484-4943-8729-35652fc393fa">
+					<reportElement x="42" y="0" width="28" height="30" uuid="2db72ab8-e484-4943-8729-35652fc393fa">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<text><![CDATA[সনের]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="60" y="8" width="25" height="15" uuid="b909d7c4-75cb-43d3-8242-3b5299bbf941">
+					<reportElement x="70" y="8" width="25" height="15" uuid="b909d7c4-75cb-43d3-8242-3b5299bbf941">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box>
@@ -951,14 +1166,14 @@
 					<textFieldExpression><![CDATA[$P{appealMonthValue}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="85" y="0" width="20" height="30" uuid="3c4acc41-1a76-45eb-ad99-1ef1f07d7714">
+					<reportElement x="96" y="0" width="34" height="30" uuid="3c4acc41-1a76-45eb-ad99-1ef1f07d7714">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<text><![CDATA[মাসের]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="105" y="8" width="25" height="15" uuid="70556af5-3e09-4b39-aed5-8424f170ecdd">
+					<reportElement x="130" y="8" width="30" height="15" uuid="70556af5-3e09-4b39-aed5-8424f170ecdd">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box>
@@ -974,7 +1189,7 @@
 					<textFieldExpression><![CDATA[$P{appealDayOfMonth}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="134" y="0" width="436" height="30" uuid="3768a76a-1b53-4ae0-b265-2e4e92fcee01">
+					<reportElement x="169" y="0" width="370" height="30" uuid="3768a76a-1b53-4ae0-b265-2e4e92fcee01">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					</reportElement>
@@ -985,11 +1200,12 @@
 				</staticText>
 			</frame>
 		</band>
-		<band height="70">
+		<band height="110">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<frame>
-				<reportElement x="380" y="0" width="191" height="70" uuid="3adee017-a05f-477d-8c9d-f9aee05e6a87"/>
+				<reportElement x="350" y="60" width="191" height="50" uuid="3adee017-a05f-477d-8c9d-f9aee05e6a87"/>
 				<staticText>
-					<reportElement x="70" y="50" width="121" height="20" uuid="6995381b-6809-4407-9537-4f1bc4f133ee"/>
+					<reportElement x="0" y="30" width="191" height="20" uuid="6995381b-6809-4407-9537-4f1bc4f133ee"/>
 					<textElement textAlignment="Right" verticalAlignment="Bottom"/>
 					<text><![CDATA[আপিলকারী/আবেদনকারীর স্বাক্ষর নাম ও ঠিকানা]]></text>
 				</staticText>
