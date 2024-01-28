@@ -257,12 +257,13 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$P{appealOfficeName} + "\n" + $P{appealOfficeAddress}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField hyperlinkType="Reference">
 					<reportElement x="230" y="40" width="100" height="10" uuid="54561991-9c24-4cde-beaa-004132c364f0"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 						<font fontName="TimesNewRoman"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$P{appealOfficeWebsite}]]></textFieldExpression>
+					<hyperlinkReferenceExpression><![CDATA[$P{appealOfficeWebsite}]]></hyperlinkReferenceExpression>
 				</textField>
 			</frame>
 		</band>
@@ -893,24 +894,14 @@
 				<text><![CDATA[১৩। ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="25" y="10" width="115" height="10" uuid="43436c39-f0c4-40a8-a863-60706cfff307">
+				<reportElement x="10" y="10" width="560" height="10" uuid="43436c39-f0c4-40a8-a863-60706cfff307">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font isItalic="true"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font isItalic="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{appellantName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["আমি <i>" + $P{appellantName} + "</i> আপিলকারী/আবেদনকারী এতদ্বারা ঘোষণা করিতেছি যে, উপরে উল্লিখিত হেতুবাদ সমূহ আমার জানামতে এবং বিশ্বাসমতে সত্য।"]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="10" y="10" width="15" height="10" uuid="2fb2f322-0a17-4fcf-b4bf-e4ddd750850a">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<text><![CDATA[আমি ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="140" y="10" width="431" height="10" uuid="f3fb2bed-061c-4005-bfcb-edcf8a4c2086"/>
-				<text><![CDATA[আপিলকারী/আবেদনকারী এতদ্বারা ঘোষণা করিতেছি যে, উপরে উল্লিখিত হেতুবাদ সমূহ আমার জানামতে এবং বিশ্বাসমতে সত্য।]]></text>
-			</staticText>
 			<frame>
 				<reportElement x="0" y="20" width="571" height="30" uuid="d82e76f4-464c-416d-a98a-cd3b4793f75f"/>
 				<staticText>
