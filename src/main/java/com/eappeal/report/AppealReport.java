@@ -12,7 +12,7 @@ import java.util.Map;
 public class AppealReport {
     public static void main (String[] args) {
         try {
-            String jasperReportFilePath = "/home/omar/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/AppealForm.jrxml";
+            String jasperReportFilePath = "/home/riyadomf/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/AppealForm.jrxml";
 
             Map<String, Object> parameters = getStringObjectMap();
 
@@ -20,7 +20,7 @@ public class AppealReport {
             JasperReport jasperReport = JasperCompileManager.compileReport(jasperReportFilePath);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/omar/Documents/codes/server-lib-others/jasperReport/AppealForm.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/riyadomf/Documents/codes/server-lib-others/jasperReport/AppealForm.pdf");
 
 
         } catch (Exception e) {
@@ -35,7 +35,7 @@ public class AppealReport {
         parameters.put("appealOfficeWebsite", "www.cevt.gov.bd");
 
         parameters.put("appealSubject", "আপিলাত ট্রাইব্যুনালে আপিল দায়ের নিমিত্ত নির্ধারিত ফরম- মোকামঃ কাস্টমস, এক্সাইজ ও ভ্যাট আপিলাত ট্রাইব্যুনাল, ঢাকা।");
-        parameters.put("appealNumber", "2017331042");
+        parameters.put("appealNumber", Utils.englishToBanglaDigitConversion("2017331042"));
 
         parameters.put("appellantNameAddressMobileEmail", "সাকিব আল হাসান, প্রোপাইটরঃ মুমু এন্টারপ্রাইজ, " +
                 "ঠিকানাঃ বাসা-১২৯/এ, দক্ষিণ নালা পাড়া, ডাকঘরঃ জিপও-৪০০০, ডাবলমুরিং, চট্টগ্রাম সিটি কর্পোরেশন, চট্টগ্রাম");
@@ -43,7 +43,7 @@ public class AppealReport {
 
         parameters.put("subjectOfAllegation", "শুল্ক মূল্যায়ন বিধিমালা ২০০০ এর বিধি বিধান প্রতিপালন না করে মনগড়া ভাবে অতি উচ্চমূল্যে বেআইনিভাবে শুল্কায়নের আদেশকে তর্কিত করে সূত্রপাত।  শুল্ক মূল্যায়ন বিধিমালা ২০০০ এর বিধি বিধান প্রতিপালন না করে মনগড়া ভাবে অতি উচ্চমূল্যে বেআইনিভাবে শুল্কায়নের আদেশকে তর্কিত করে সূত্রপাত।");
 
-        parameters.put("orderNumber", "123456789");
+        parameters.put("orderNumber", Utils.englishToBanglaDigitConversion("123456789"));
         parameters.put("issueDate", DateUtils.getLocalizedDate(LocalDate.now(), new Locale("bn")));
         parameters.put("receivedDate", DateUtils.getLocalizedDate(LocalDate.now(), new Locale("bn")));
 
