@@ -19,12 +19,12 @@
 	<parameter name="receivedDate" class="java.lang.String"/>
 	<parameter name="contactNameAddressMobileEmail" class="java.lang.String"/>
 	<parameter name="companyNameAddressMobileEmail" class="java.lang.String"/>
-	<parameter name="dutyTaxAmount" class="java.math.BigDecimal"/>
-	<parameter name="fineAmount" class="java.math.BigDecimal"/>
-	<parameter name="depositAmount" class="java.math.BigDecimal"/>
-	<parameter name="valueOfGoodsForServiceAmount" class="java.math.BigDecimal"/>
-	<parameter name="totalAmount" class="java.math.BigDecimal"/>
-	<parameter name="appealClaimAmount" class="java.math.BigDecimal"/>
+	<parameter name="dutyTaxAmount" class="java.lang.String"/>
+	<parameter name="fineAmount" class="java.lang.String"/>
+	<parameter name="depositAmount" class="java.lang.String"/>
+	<parameter name="valueOfGoodsForServiceAmount" class="java.lang.String"/>
+	<parameter name="totalAmount" class="java.lang.String"/>
+	<parameter name="appealClaimAmount" class="java.lang.String"/>
 	<parameter name="applicationFeeNumber" class="java.lang.String"/>
 	<parameter name="applicationFeeDate" class="java.lang.String"/>
 	<parameter name="appellantName" class="java.lang.String"/>

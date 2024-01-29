@@ -12,7 +12,7 @@ import java.util.Map;
 public class AppealReport {
     public static void main (String[] args) {
         try {
-            String jasperReportFilePath = "/home/riyadomf/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/AppealForm.jrxml";
+            String jasperReportFilePath = "/home/omar/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/AppealForm.jrxml";
 
             Map<String, Object> parameters = getStringObjectMap();
 
@@ -20,7 +20,7 @@ public class AppealReport {
             JasperReport jasperReport = JasperCompileManager.compileReport(jasperReportFilePath);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/riyadomf/Documents/codes/server-lib-others/jasperReport/AppealForm.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/omar/Documents/codes/server-lib-others/jasperReport/AppealForm.pdf");
 
 
         } catch (Exception e) {
@@ -44,30 +44,30 @@ public class AppealReport {
         parameters.put("subjectOfAllegation", "শুল্ক মূল্যায়ন বিধিমালা ২০০০ এর বিধি বিধান প্রতিপালন না করে মনগড়া ভাবে অতি উচ্চমূল্যে বেআইনিভাবে শুল্কায়নের আদেশকে তর্কিত করে সূত্রপাত।  শুল্ক মূল্যায়ন বিধিমালা ২০০০ এর বিধি বিধান প্রতিপালন না করে মনগড়া ভাবে অতি উচ্চমূল্যে বেআইনিভাবে শুল্কায়নের আদেশকে তর্কিত করে সূত্রপাত।");
 
         parameters.put("orderNumber", Utils.englishToBanglaDigitConversion("123456789"));
-        parameters.put("issueDate", DateUtils.getLocalizedDate(LocalDate.now(), new Locale("bn")));
-        parameters.put("receivedDate", DateUtils.getLocalizedDate(LocalDate.now(), new Locale("bn")));
+        parameters.put("issueDate", DateUtils.getLocalizedDate(LocalDate.now(), new Locale.Builder().setLanguage("bn").build()));
+        parameters.put("receivedDate", DateUtils.getLocalizedDate(LocalDate.now(), new Locale.Builder().setLanguage("bn").build()));
 
         parameters.put("contactNameAddressMobileEmail", "সাকিব আল হাসান, প্রোপাইটরঃ মুমু এন্টারপ্রাইজ, " +
                 "ঠিকানাঃ বাসা-১২৯/এ, দক্ষিণ নালা পাড়া, ডাকঘরঃ জিপও-৪০০০, ডাবলমুরিং, চট্টগ্রাম সিটি কর্পোরেশন, চট্টগ্রাম");
         parameters.put("companyNameAddressMobileEmail", "সাকিব আল হাসান, প্রোপাইটরঃ মুমু এন্টারপ্রাইজ, " +
                 "ঠিকানাঃ বাসা-১২৯/এ, দক্ষিণ নালা পাড়া, ডাকঘরঃ জিপও-৪০০০, ডাবলমুরিং, চট্টগ্রাম সিটি কর্পোরেশন, চট্টগ্রাম");
 
-        parameters.put("totalAmount", BigDecimal.valueOf(4570.39d));
-        parameters.put("dutyTaxAmount", BigDecimal.valueOf(470.39d));
-        parameters.put("fineAmount", BigDecimal.valueOf(698.21d));
-        parameters.put("depositAmount", BigDecimal.valueOf(698.21d));
-        parameters.put("valueOfGoodsForServiceAmount", BigDecimal.valueOf(9000d));
+        parameters.put("totalAmount", Utils.englishToBanglaDigitConversion(Utils.banglaMoneyFormatter(BigDecimal.valueOf(4341414570.39d))));
+        parameters.put("dutyTaxAmount", Utils.englishToBanglaDigitConversion(BigDecimal.valueOf(470.39d).toString()));
+        parameters.put("fineAmount", Utils.englishToBanglaDigitConversion(BigDecimal.valueOf(698.21d).toString()));
+        parameters.put("depositAmount", Utils.englishToBanglaDigitConversion(BigDecimal.valueOf(698.21d).toString()));
+        parameters.put("valueOfGoodsForServiceAmount", Utils.englishToBanglaDigitConversion(BigDecimal.valueOf(9000d).toString()));
 
-        parameters.put("appealClaimAmount", BigDecimal.valueOf(531.89d));
+        parameters.put("appealClaimAmount", Utils.englishToBanglaDigitConversion(BigDecimal.valueOf(531.89d).toString()));
 
-        parameters.put("applicationFeeNumber", "201733150");
-        parameters.put("applicationFeeDate", DateUtils.getLocalizedDate(LocalDate.now(), new Locale("bn")));
+        parameters.put("applicationFeeNumber", Utils.englishToBanglaDigitConversion("201733150"));
+        parameters.put("applicationFeeDate", DateUtils.getLocalizedDate(LocalDate.now(), new Locale.Builder().setLanguage("bn").build()));
 
         parameters.put("appellantName", "সাকিব আল হাসান");
 
-        parameters.put("appealDayOfMonth", DateUtils.getLocalizedDayOfMonth(LocalDate.now(), new Locale("bn")));
-        parameters.put("appealMonthValue", DateUtils.getLocalizedMonthValue(LocalDate.now(), new Locale("bn")));
-        parameters.put("appealYear", DateUtils.getLocalizedYear(LocalDate.now(), new Locale("bn")));
+        parameters.put("appealDayOfMonth", DateUtils.getLocalizedDayOfMonth(LocalDate.now(), new Locale.Builder().setLanguage("bn").build()));
+        parameters.put("appealMonthValue", DateUtils.getLocalizedMonthValue(LocalDate.now(), new Locale.Builder().setLanguage("bn").build()));
+        parameters.put("appealYear", DateUtils.getLocalizedYear(LocalDate.now(), new Locale.Builder().setLanguage("bn").build()));
 
         return parameters;
     }
