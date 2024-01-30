@@ -2,9 +2,6 @@ package com.eappeal.report;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Locale;
 
 public class Utils {
     public static String englishToBanglaDigitConversion(String englishNumber) {
@@ -33,38 +30,39 @@ public class Utils {
         return banglaNumber.toString();
     }
 
+//    public static String banglaMoneyFormatter(BigDecimal amount) {
+//        DecimalFormat df = new DecimalFormat("###,##0.00");
+//        return df.format(amount);
+//    }
+
     public static String banglaMoneyFormatter(BigDecimal amount) {
-        DecimalFormat df = new DecimalFormat("###,##0.00");
-        return df.format(amount);
+        String formattedAmount = amount.setScale(2, RoundingMode.HALF_DOWN).toString();
+        return banglaMoneyCommaFormatter(formattedAmount);
     }
 
-//    public static String banglaMoneyFormatter(BigDecimal amount) {
-//        String formattedAmount = amount.setScale(2, RoundingMode.HALF_DOWN).toString();
-//        return addCommas(formattedAmount);
-//    }
+    private static String banglaMoneyCommaFormatter(String amount) {
+        StringBuilder result = new StringBuilder();
+        String[] parts = amount.split("\\.");
+        String integerPart = parts[0];
 
-//    private static String addCommas(String input) {
-//        StringBuilder result = new StringBuilder();
-//        String[] parts = input.split("\\.");
-//        String integerPart = parts[0];
-//
-//        for (int i = 0; i < integerPart.length(); i++) {
-//            char c = integerPart.charAt(i);
-//            result.append(c);
-//
-//            int positionFromRight = integerPart.length() - 1 - i;
-//            if (positionFromRight > 0 && positionFromRight % 2 == 0) {
-//                result.append(",");
-//            }
-//        }
-//
-//        // Add the decimal part if present
-//        if (parts.length > 1) {
-//            result.append(".").append(parts[1]);
-//        }
-//
-//        return result.toString();
-//    }
+        for (int i = 0; i < integerPart.length(); i++) {
+            char c = integerPart.charAt(i);
+            result.append(c);
+
+            int positionFromRight = integerPart.length() - 1 - i;
+            int positionInGroup = positionFromRight % 7;
+            if (positionFromRight > 0 && positionInGroup == 0 || positionInGroup == 3 || positionInGroup == 5) {
+                result.append(",");
+            }
+        }
+
+        // Add the decimal part if present
+        if (parts.length > 1) {
+            result.append(".").append(parts[1]);
+        }
+
+        return result.toString();
+    }
 }
 
 

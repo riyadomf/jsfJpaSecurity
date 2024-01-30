@@ -2,6 +2,7 @@ package com.eappeal.report;
 
 import net.sf.jasperreports.engine.*;
 
+import javax.sound.midi.Soundbank;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -11,21 +12,23 @@ import java.util.Map;
 
 public class AppealReport {
     public static void main (String[] args) {
-        try {
-            String jasperReportFilePath = "/home/omar/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/AppealForm.jrxml";
+        System.out.println(Utils.banglaMoneyFormatter(BigDecimal.valueOf(13.21d)));
 
-            Map<String, Object> parameters = getStringObjectMap();
-
-
-            JasperReport jasperReport = JasperCompileManager.compileReport(jasperReportFilePath);
-
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/omar/Documents/codes/server-lib-others/jasperReport/AppealForm.pdf");
-
-
-        } catch (Exception e) {
-            System.out.println("Exception while creating report" + e);
-        }
+//        try {
+//            String jasperReportFilePath = "/home/omar/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/AppealForm.jrxml";
+//
+//            Map<String, Object> parameters = getStringObjectMap();
+//
+//
+//            JasperReport jasperReport = JasperCompileManager.compileReport(jasperReportFilePath);
+//
+//            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
+//            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/omar/Documents/codes/server-lib-others/jasperReport/AppealForm.pdf");
+//
+//
+//        } catch (Exception e) {
+//            System.out.println("Exception while creating report" + e);
+//        }
     }
 
     private static Map<String, Object> getStringObjectMap() {

@@ -513,15 +513,6 @@
 				</reportElement>
 				<text><![CDATA[৫। ]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="200" y="36" width="340" height="12" uuid="a1cdcabf-a7dc-4332-9793-721d5bf714e6">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top">
-					<font fontName="Nikosh"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{orderNumber}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="190" y="36" width="10" height="12" uuid="ab21efe1-86da-4761-a78f-3ea46599e30e">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -529,15 +520,6 @@
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="200" y="48" width="340" height="12" uuid="08a1a2b6-ffa7-4514-bf88-e30a13dcefef">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top">
-					<font fontName="Nikosh"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{issueDate}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="190" y="60" width="10" height="12" uuid="258a0818-780a-460d-8f2e-45f37efa8325">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -545,15 +527,6 @@
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="200" y="60" width="340" height="12" uuid="de18435c-fb8f-4024-afeb-dedbe83013e6">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top">
-					<font fontName="Nikosh"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{receivedDate}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="190" y="48" width="10" height="12" uuid="36ed2fab-fc6a-43d8-a1c4-a971e2693d4a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -951,16 +924,6 @@
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="248" y="48" width="290" height="36" uuid="ed04eac1-fe25-46fb-a0bd-0232f1f274e3">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top">
-					<font fontName="Nikosh"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{appealClaimAmount}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="238" y="48" width="10" height="12" uuid="dd1ea4c5-8dc6-40bc-80b5-8aa1d917e838">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -1009,23 +972,6 @@
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="248" y="84" width="290" height="24" uuid="c3565904-d526-4f23-9e48-76df22b66c54">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top"/>
-				<textFieldExpression><![CDATA[$P{appealClaimAmount}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="248" y="24" width="290" height="24" uuid="5c336cfa-705b-4b2b-8173-24732d2ede48">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top">
-					<font fontName="Nikosh"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{appealClaimAmount}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="238" y="24" width="10" height="12" uuid="6de3caf9-9466-464e-9abe-b29c300f1f42">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
