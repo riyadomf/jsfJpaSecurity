@@ -2,6 +2,10 @@ package com.eappeal.report;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DecimalStyle;
+import java.util.Locale;
 
 public class Utils {
     public static String englishToBanglaDigitConversion(String englishNumber) {
@@ -62,6 +66,16 @@ public class Utils {
         }
 
         return result.toString();
+    }
+
+    public static String getBanglaDate(LocalDate localDate) {
+        Locale locale = new Locale.Builder().setLanguage("bn").build();
+        DateTimeFormatter formatter
+                = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+                .localizedBy(locale)
+                .withDecimalStyle(DecimalStyle.of(locale));
+
+        return localDate.format(formatter);
     }
 }
 

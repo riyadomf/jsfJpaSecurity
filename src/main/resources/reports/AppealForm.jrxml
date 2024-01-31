@@ -14,9 +14,9 @@
 	<parameter name="subjectOfAllegation" class="java.lang.String">
 		<defaultValueExpression><![CDATA[$P{subjectOfAllegation}]]></defaultValueExpression>
 	</parameter>
-	<parameter name="orderNumber" class="java.lang.String"/>
-	<parameter name="issueDate" class="java.lang.String"/>
-	<parameter name="receivedDate" class="java.lang.String"/>
+	<parameter name="mainOrderNumber" class="java.lang.String"/>
+	<parameter name="mainOrderIssueDate" class="java.lang.String"/>
+	<parameter name="mainOrderReceivedDate" class="java.lang.String"/>
 	<parameter name="contactNameAddressMobileEmail" class="java.lang.String"/>
 	<parameter name="companyNameAddressMobileEmail" class="java.lang.String"/>
 	<parameter name="dutyTaxAmount" class="java.lang.String"/>
@@ -24,16 +24,19 @@
 	<parameter name="depositAmount" class="java.lang.String"/>
 	<parameter name="valueOfGoodsForServiceAmount" class="java.lang.String"/>
 	<parameter name="totalAmount" class="java.lang.String"/>
-	<parameter name="appealClaimAmount" class="java.lang.String"/>
+	<parameter name="appealClaimAmount1969" class="java.lang.String"/>
 	<parameter name="applicationFeeNumber" class="java.lang.String"/>
 	<parameter name="applicationFeeDate" class="java.lang.String"/>
 	<parameter name="appellantName" class="java.lang.String"/>
 	<parameter name="appealDayOfMonth" class="java.lang.String"/>
 	<parameter name="appealYear" class="java.lang.String"/>
 	<parameter name="appealMonthValue" class="java.lang.String"/>
-	<queryString language="SQL">
-		<![CDATA[select * from appeal]]>
-	</queryString>
+	<parameter name="appealClaimAmount1991" class="java.lang.String"/>
+	<parameter name="appealClaimAmount2012" class="java.lang.String"/>
+	<parameter name="appealClaimAmount1944" class="java.lang.String"/>
+	<parameter name="appealOrderNumber" class="java.lang.String"/>
+	<parameter name="appealOrderReceivedDate" class="java.lang.String"/>
+	<parameter name="appealOrderIssueDate" class="java.lang.String"/>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
@@ -259,14 +262,14 @@
 অভ্যন্তরীণ সম্পদ বিভাগ]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="70" y="24" width="400" height="24" uuid="4d8dbc70-c990-43d3-8a91-c59a527dbc3e">
+					<reportElement x="70" y="24" width="400" height="24" isRemoveLineWhenBlank="true" uuid="4d8dbc70-c990-43d3-8a91-c59a527dbc3e">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$P{appealOfficeName} + "\n" + $P{appealOfficeAddress}]]></textFieldExpression>
 				</textField>
 				<textField hyperlinkType="Reference">
-					<reportElement x="170" y="48" width="200" height="12" uuid="54561991-9c24-4cde-beaa-004132c364f0">
+					<reportElement x="170" y="48" width="200" height="12" isRemoveLineWhenBlank="true" uuid="54561991-9c24-4cde-beaa-004132c364f0">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
@@ -287,7 +290,7 @@
 		<band height="32" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="25" y="0" width="514" height="12" uuid="e9b1a258-ec6a-4378-892e-21c4b4104d1c">
+				<reportElement x="25" y="0" width="514" height="12" isRemoveLineWhenBlank="true" uuid="e9b1a258-ec6a-4378-892e-21c4b4104d1c">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -368,7 +371,7 @@
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="200" y="0" width="340" height="36" uuid="0b8fa5a5-1733-47c1-b2c0-0f17834214ed">
+				<reportElement x="200" y="0" width="340" height="36" isRemoveLineWhenBlank="true" uuid="0b8fa5a5-1733-47c1-b2c0-0f17834214ed">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -376,7 +379,7 @@
 				<textFieldExpression><![CDATA[$P{appellantNameAddressMobileEmail}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="200" y="36" width="340" height="36" uuid="ab1bb348-fc08-442c-9a95-a2ade72618ec">
+				<reportElement x="200" y="36" width="340" height="36" isRemoveLineWhenBlank="true" uuid="ab1bb348-fc08-442c-9a95-a2ade72618ec">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
@@ -430,8 +433,9 @@
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="200" y="0" width="340" height="48" uuid="da96e153-5cf1-4753-9601-83fe75630451">
+				<reportElement x="200" y="0" width="340" height="48" isRemoveLineWhenBlank="true" uuid="da96e153-5cf1-4753-9601-83fe75630451">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{subjectOfAllegation} != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$P{subjectOfAllegation}]]></textFieldExpression>
@@ -469,7 +473,7 @@
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="200" y="0" width="340" height="36" uuid="a310052b-c96e-4ca1-9494-25ecf6ea0a5e">
+				<reportElement x="200" y="0" width="340" height="36" isRemoveLineWhenBlank="true" uuid="a310052b-c96e-4ca1-9494-25ecf6ea0a5e">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
@@ -591,31 +595,64 @@
 				<text><![CDATA[(চ) প্রাপ্তির তারিখ (লেখা প্রমানসহ)]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="0" width="340" height="12" uuid="ef654dda-40a2-4308-a351-d71d9e03d68c">
+				<reportElement x="200" y="0" width="340" height="12" isRemoveLineWhenBlank="true" uuid="ef654dda-40a2-4308-a351-d71d9e03d68c">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{mainOrderNumber}  != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{orderNumber}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{mainOrderNumber}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="200" y="12" width="340" height="12" uuid="283bd407-8b95-4323-b0b3-a335e34d5399">
+				<reportElement x="200" y="12" width="340" height="12" isRemoveLineWhenBlank="true" uuid="283bd407-8b95-4323-b0b3-a335e34d5399">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{mainOrderIssueDate} != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{issueDate}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{mainOrderIssueDate}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="200" y="24" width="340" height="12" uuid="4150cf76-ceea-4990-9a84-465daf07bb65">
+				<reportElement x="200" y="24" width="340" height="12" isRemoveLineWhenBlank="true" uuid="4150cf76-ceea-4990-9a84-465daf07bb65">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{mainOrderReceivedDate} != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{receivedDate}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{mainOrderReceivedDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="36" width="340" height="12" isRemoveLineWhenBlank="true" uuid="f5855f44-871f-4166-93b4-b2f8c3d0847d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{appealOrderNumber} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Nikosh"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{appealOrderNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="48" width="340" height="12" isRemoveLineWhenBlank="true" uuid="8fbab71f-9f93-4d6f-90b4-11da107d9189">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{appealOrderIssueDate} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Nikosh"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{appealOrderIssueDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="60" width="340" height="12" isRemoveLineWhenBlank="true" uuid="629afa9a-1f4d-4909-9414-1d4ff9d83776">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{appealOrderReceivedDate} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Nikosh"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{appealOrderReceivedDate}]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="51">
@@ -670,7 +707,7 @@
 				<text><![CDATA[যে ঠিকানায় আপিলকারী/আবেদনকারীর ব্যবসায়িক প্রতিষ্ঠান/শিল্প কারখানা চালু আছে (মোবাইল নম্বর ও ই-মেইল সহ)]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="0" width="340" height="48" uuid="ab872613-3b06-46ca-8e19-c7e6f4474197"/>
+				<reportElement x="200" y="0" width="340" height="48" isRemoveLineWhenBlank="true" uuid="ab872613-3b06-46ca-8e19-c7e6f4474197"/>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$P{companyNameAddressMobileEmail}]]></textFieldExpression>
 			</textField>
@@ -708,7 +745,7 @@
 				<text><![CDATA[যে ঠিকানায় রেসপনডেন্ট/প্রতিপক্ষের নিকট নোটিশ পাঠাতে হবে (মোবাইল নম্বর ও ই-মেইল সহ)]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="0" width="340" height="36" uuid="c636de15-a85c-40ba-8c9e-280804511074">
+				<reportElement x="200" y="0" width="340" height="36" isRemoveLineWhenBlank="true" uuid="c636de15-a85c-40ba-8c9e-280804511074">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
@@ -763,7 +800,7 @@
 				<text><![CDATA[৯। ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="36" width="340" height="12" uuid="0088bb34-7bc4-4840-9d35-ffaf54819098">
+				<reportElement x="200" y="36" width="340" height="12" isRemoveLineWhenBlank="true" uuid="0088bb34-7bc4-4840-9d35-ffaf54819098">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -781,7 +818,7 @@
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="48" width="340" height="12" uuid="2cff816c-d9ce-4f40-a002-b21dea345393">
+				<reportElement x="200" y="48" width="340" height="12" isRemoveLineWhenBlank="true" uuid="2cff816c-d9ce-4f40-a002-b21dea345393">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -850,7 +887,7 @@
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="12" width="340" height="12" uuid="8db9eafb-33b5-4aa1-ad40-b12b4d2963cf">
+				<reportElement x="200" y="12" width="340" height="12" isRemoveLineWhenBlank="true" uuid="8db9eafb-33b5-4aa1-ad40-b12b4d2963cf">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -866,7 +903,7 @@
 				<text><![CDATA[: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="200" y="24" width="340" height="12" uuid="45ca3b59-7396-4dba-babc-386075c49ab6">
+				<reportElement x="200" y="24" width="340" height="12" isRemoveLineWhenBlank="true" uuid="45ca3b59-7396-4dba-babc-386075c49ab6">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -874,7 +911,7 @@
 				<textFieldExpression><![CDATA[$P{fineAmount}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="200" y="0" width="340" height="12" uuid="affba14c-15c2-4cdb-b16c-8c3a93dd1130">
+				<reportElement x="200" y="0" width="340" height="12" isRemoveLineWhenBlank="true" uuid="affba14c-15c2-4cdb-b16c-8c3a93dd1130">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
@@ -908,13 +945,14 @@
 				<text><![CDATA[১০। ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="248" y="0" width="290" height="24" uuid="0480600f-e82e-4b0c-909c-5a452073bd46">
+				<reportElement x="248" y="0" width="293" height="24" isRemoveLineWhenBlank="true" uuid="0480600f-e82e-4b0c-909c-5a452073bd46">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{appealClaimAmount1969} != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Nikosh"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{appealClaimAmount}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{appealClaimAmount1969}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="210" y="24" width="10" height="12" uuid="7e40d8a9-9d53-405b-b14b-7e6ae993c12c">
@@ -980,6 +1018,36 @@
 				<textElement textAlignment="Left" verticalAlignment="Top"/>
 				<text><![CDATA[: ]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="248" y="24" width="293" height="24" isRemoveLineWhenBlank="true" uuid="44c3232e-e10c-4f15-a2e7-48ccc699feda">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{appealClaimAmount1991} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Nikosh"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{appealClaimAmount1991}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="48" width="293" height="24" isRemoveLineWhenBlank="true" uuid="689dc93f-2e95-4c25-bf24-e61d3c44aafb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{appealClaimAmount2012} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Nikosh"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{appealClaimAmount2012}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="84" width="293" height="24" isRemoveLineWhenBlank="true" uuid="f993d904-f261-45f1-be82-596b7908a1d6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{appealClaimAmount1944} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Nikosh"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{appealClaimAmount1944}]]></textFieldExpression>
+			</textField>
 		</band>
 		<band height="27">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>

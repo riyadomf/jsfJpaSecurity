@@ -2,36 +2,35 @@ package com.eappeal.report;
 
 import net.sf.jasperreports.engine.*;
 
-import javax.sound.midi.Soundbank;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
+
 
 public class AppealReport {
     public static void main (String[] args) {
-        System.out.println(Utils.banglaMoneyFormatter(BigDecimal.valueOf(13.21d)));
 
-//        try {
-//            String jasperReportFilePath = "/home/omar/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/AppealForm.jrxml";
-//
-//            Map<String, Object> parameters = getStringObjectMap();
-//
-//
-//            JasperReport jasperReport = JasperCompileManager.compileReport(jasperReportFilePath);
-//
-//            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-//            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/omar/Documents/codes/server-lib-others/jasperReport/AppealForm.pdf");
-//
-//
-//        } catch (Exception e) {
-//            System.out.println("Exception while creating report" + e);
-//        }
+        try {
+            String jasperReportFilePath = "/home/omar/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/TribunalCauseList.jrxml";
+            Param p = new Param();
+            Map<String, Object> parameters = p.getTribunalCauseListParams();
+
+            JasperReport jasperReport = JasperCompileManager.compileReport(jasperReportFilePath);
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/omar/Documents/codes/server-lib-others/jasperReport/TribunalCauseList.pdf");
+
+
+        } catch (Exception e) {
+            System.out.println("Exception while creating report" + e);
+        }
     }
 
-    private static Map<String, Object> getStringObjectMap() {
+
+
+
+    private static Map<String, Object> getAppealParams() {
         Map<String, Object> parameters = new HashMap<String, Object>();
         parameters.put("appealOfficeName", "কাস্টমস, এক্সাইজ ও ভ্যাট আপিলাত ট্রাইব্যুনাল");
         parameters.put("appealOfficeAddress", "রাজস্ব ভবন (১১ তলা), প্লট- এফ, ১/এ, আগারগাঁও, শেরেবাংলানগর, ঢাকা-১২০৭।");
@@ -74,4 +73,5 @@ public class AppealReport {
 
         return parameters;
     }
+
 }
