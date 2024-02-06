@@ -1,8 +1,6 @@
 package com.eappeal.report;
 
-import java.io.Serializable;
-
-public class CauseList{
+public class CauseDTO {
     private String appealNumber;
     private String appellantName;
     private String respondentPostAndOffice;
@@ -10,7 +8,7 @@ public class CauseList{
     private String expiryDate;
     private String remarks;
 
-    public CauseList(String appealNumber, String appellantName, String respondentPostAndOffice, String scheduleTime, String expiryDate, String remarks) {
+    public CauseDTO(String appealNumber, String appellantName, String respondentPostAndOffice, String scheduleTime, String expiryDate, String remarks) {
         this.appealNumber = appealNumber;
         this.appellantName = appellantName;
         this.respondentPostAndOffice = respondentPostAndOffice;

@@ -1,6 +1,7 @@
 package com.eappeal.report;
 
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -25,6 +26,45 @@ public class AppealReport {
         } catch (Exception e) {
             System.out.println("Exception while creating report" + e);
         }
+    }
+
+    public static Map<String, Object> getTribunalCauseListParams() {
+        Map<String, Object> parameters = new HashMap<String, Object>();
+        parameters.put("appealOfficeName", "কাস্টমস, এক্সাইজ ও ভ্যাট আপিলাত ট্রাইব্যুনাল");
+        parameters.put("appealOfficeAddress", "রাজস্ব ভবন (১১ তলা), প্লট- এফ, ১/এ, আগারগাঁও, শেরেবাংলানগর, ঢাকা-১২০৭।");
+        parameters.put("appealOfficeWebsite", "www.cevt.gov.bd");
+
+        parameters.put("scheduleDate", Utils.getBanglaDate(LocalDate.now()));
+        parameters.put("benchNumber", Utils.englishToBanglaDigitConversion("3"));
+
+
+        List<CauseDTO> causeListCollection = getCauseListCollection();
+        parameters.put("causeListCollectionParam", new JRBeanCollectionDataSource(causeListCollection));
+
+        return parameters;
+    }
+
+
+
+
+    private static List<CauseDTO> getCauseListCollection() {
+        CauseDTO c1 = new CauseDTO("1234", "Abdul Kuddus", "commssioner, Dhaka", "12/12/2012", "12/12/2012", "I want to break freee");
+        CauseDTO c2 = new CauseDTO("1234", "Abdul Kuddus", "commssioner, Dhaka", "12/12/2012", "12/12/2012", "I want to break freee");
+        CauseDTO c3 = new CauseDTO("1234", "Abdul Kuddus", "commssioner, Dhaka", "12/12/2012", "12/12/2012", "I want to break freee");
+
+//        c1.setAppealNumber("1234");
+//        c1.setAppellantName("Abdul Kuddus");
+//        c1.setRespondentPostAndOffice("commissioner, Dhaka");
+//        c1.setScheduleTime("12/12/2012");
+//        c1.setExpiryDate("12/12/2012");
+//        c1.setRemarks("I want to break free");
+//        System.out.println(c1.toString());
+
+        List<CauseDTO> causeLists = new ArrayList<>();
+        causeLists.add(c1);
+        causeLists.add(c2);
+        causeLists.add(c3);
+        return causeLists;
     }
 
 
