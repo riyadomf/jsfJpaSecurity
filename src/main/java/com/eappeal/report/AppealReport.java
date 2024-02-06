@@ -5,6 +5,7 @@ import net.sf.jasperreports.engine.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import java.time.LocalTime;
 import java.util.*;
 
 
@@ -12,14 +13,13 @@ public class AppealReport {
     public static void main (String[] args) {
 
         try {
-            String jasperReportFilePath = "/home/omar/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/TribunalCauseList.jrxml";
-            Param p = new Param();
-            Map<String, Object> parameters = p.getTribunalCauseListParams();
+            String jasperReportFilePath = "/home/omar/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/hearingLetter.jrxml";
+            Map<String, Object> parameters = getHearingLetterParams();
 
             JasperReport jasperReport = JasperCompileManager.compileReport(jasperReportFilePath);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/omar/Documents/codes/server-lib-others/jasperReport/TribunalCauseList.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "/home/omar/IdeaProjects/jsfJpaSecurity/src/main/resources/reports/hearingLetter.pdf");
 
 
         } catch (Exception e) {
@@ -28,6 +28,45 @@ public class AppealReport {
     }
 
 
+
+
+    public static Map<String, Object> getHearingLetterParams() {
+        Map<String, Object> parameters = new HashMap<String, Object>();
+        parameters.put("appealOfficeName", "কাস্টমস, এক্সাইজ ও ভ্যাট আপিলাত ট্রাইব্যুনাল");
+        parameters.put("appealOfficeAddress", "রাজস্ব ভবন (১১ তলা), প্লট- এফ, ১/এ, আগারগাঁও, শেরেবাংলানগর, ঢাকা-১২০৭।");
+        parameters.put("appealOfficeWebsite", "www.cevt.gov.bd");
+
+        parameters.put("appealNumber", Utils.englishToBanglaDigitConversion("2017331042"));
+        parameters.put("orderNumber", Utils.englishToBanglaDigitConversion("23423324"));
+
+        parameters.put("appellantNameAddressMobileEmail", formatNameAddressMobileEmail("আব্দুল কুদুস", "বনানী, ঢাকা", "০১৮২০০৭৪৪০২", "omr@gmail.com"));
+        parameters.put("respondentPostUnitOfficeAddress", formatRespondentPostUnitOfficeAddress("কমিশনার", "সেকশন-১" , "কাস্টমস হাউস, পানগাও"));
+
+        parameters.put("hearingLetterNumber", Utils.englishToBanglaDigitConversion("4453462"));
+        parameters.put("currentDate", Utils.getBanglaDate(LocalDate.now()));
+
+        parameters.put("hearingDate", Utils.getBanglaDate(LocalDate.now()));
+        parameters.put("hearingTime", Utils.getBanglaTime(LocalTime.now()));
+
+        parameters.put("benchNumber", Utils.englishToBanglaDigitConversion("1"));
+
+        return parameters;
+    }
+
+
+    private static String formatNameAddressMobileEmail(String name, String address, String mobile, String email) {
+
+        return (name != null ? ("নাম: " + name + "\n") : "") +
+                (address != null ? ("ঠিকানা: " + address + "\n") : "") +
+                (mobile != null ? ("মোবাইল: " + Utils.englishToBanglaDigitConversion(mobile) + ", ") : "") +
+                (email != null ? ("ই-মেইল: " + email) : "");
+    }
+
+    private static String formatRespondentPostUnitOfficeAddress(String post, String unit, String officeName) {
+        return (post != null ? (post + ", ") : "") +
+                (unit != null ? (unit + ",") : "") + "\n" +
+                officeName;
+    }
 
 
     private static Map<String, Object> getAppealParams() {

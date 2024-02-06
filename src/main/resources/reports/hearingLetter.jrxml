@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hearingLetter" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="40" bottomMargin="40" uuid="8e7ec72f-fc40-484f-8657-a27059b959ac">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Base" isDefault="true" fontName="Nikosh" fontSize="14"/>
+	<parameter name="appealNumber" class="java.lang.String"/>
+	<parameter name="currentDate" class="java.lang.String"/>
+	<parameter name="appealOfficeName" class="java.lang.String"/>
+	<parameter name="appealOfficeAddress" class="java.lang.String"/>
+	<parameter name="appealOfficeWebsite" class="java.lang.String"/>
+	<parameter name="appellantNameAddressMobileEmail" class="java.lang.String"/>
+	<parameter name="respondentPostUnitOfficeAddress" class="java.lang.String"/>
+	<parameter name="hearingLetterNumber" class="java.lang.String"/>
+	<parameter name="orderNumber" class="java.lang.String"/>
+	<parameter name="hearingDate" class="java.lang.String"/>
+	<parameter name="hearingTime" class="java.lang.String"/>
+	<parameter name="benchNumber" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement x="0" y="0" width="495" height="90" uuid="739b29fb-ffa1-4e03-b9b4-a177a9c177ff">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="50" y="0" width="400" height="34" uuid="76f4be22-3faf-42a6-a980-8115740959ab">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Nikosh" size="14"/>
+					</textElement>
+					<text><![CDATA[গণপ্রজাতন্ত্রী বাংলাদেশ সরকার
+অভ্যন্তরীণ সম্পদ বিভাগ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="50" y="34" width="400" height="34" isRemoveLineWhenBlank="true" uuid="be3430a3-67dc-4285-b979-47c57f1bd086">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{appealOfficeName} + "\n" + $P{appealOfficeAddress}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true" hyperlinkType="Reference">
+					<reportElement x="150" y="68" width="200" height="14" isRemoveLineWhenBlank="true" uuid="4ae64fb7-e2ef-4fab-9b79-9115b0e2c9b9">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+						<font fontName="TimesNewRoman" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{appealOfficeWebsite}]]></textFieldExpression>
+					<hyperlinkReferenceExpression><![CDATA[$P{appealOfficeWebsite}]]></hyperlinkReferenceExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="87" width="495" height="1" uuid="d2490f17-903d-4060-885f-054684850ccf">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.3"/>
+					</graphicElement>
+				</line>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="42" y="0" width="208" height="17" uuid="cee315c7-7e14-4a23-a418-a29aa1d3544a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{hearingLetterNumber}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="320" y="0" width="175" height="17" uuid="30535875-9a98-4779-89f0-b7a75b1f6b61">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["তারিখ: " + $P{currentDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="32" height="17" uuid="9271acf8-9a0e-43e5-83f4-50374da1606b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[নথি নং]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="0" width="10" height="17" uuid="42f29bb6-8274-4b15-a57a-4cb1ce474110">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="185" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="32" height="17" uuid="54fd7946-3bba-414c-ac5d-03633cc1b1f2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[প্রাপক]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="0" width="108" height="17" uuid="0c38f85f-e36d-4655-b18a-9d9637581a1a">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[স্বত্ত্বাধিকারী/ব্যবস্থাপনা পরিচালক]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="42" y="17" width="453" height="51" uuid="aa1d4548-5344-4eab-b35f-b4e2337473ec">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{appellantNameAddressMobileEmail}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="440" y="68" width="55" height="17" uuid="a687829d-bd85-4970-a04b-91b2e6630e81">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[আপিলকারী।]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="68" width="105" height="13" uuid="28507ab0-774b-472e-9c42-c03abb2e77ce">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25" lineStyle="Dashed"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="85" width="100" height="20" uuid="aa625ac5-fc66-49b8-aa2f-a2933360ec64">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[বনাম]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="42" y="105" width="453" height="34" uuid="f423c817-155d-4485-a45e-ca2d577c4c95">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{respondentPostUnitOfficeAddress}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="440" y="139" width="55" height="17" uuid="ce10ee17-31cd-4196-8624-e2d6349634f6">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[রেসপনডেন্ট।]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="139" width="105" height="13" uuid="1ad486fd-ef2e-46b1-a7c0-ba329d6b3160">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25" lineStyle="Dashed"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="0" width="10" height="17" uuid="acfab608-f91d-471a-95c2-4d590c5aa846">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+		<band height="17">
+			<staticText>
+				<reportElement x="42" y="0" width="453" height="17" uuid="98efa1e3-7cd5-448a-bf6a-d204fe9dd8df">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[আপিল শুনানিতে উপস্থিতির নোটিশ।]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="32" height="17" uuid="b2123e85-5439-47bd-b12b-8e3e65ee41dd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[বিষয়]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="0" width="10" height="17" uuid="054b27de-b20f-4e22-946f-7c5e8a5915fb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+		<band height="55">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="10" width="32" height="17" uuid="ea8769db-eae7-4196-b319-0f4e2d140f97">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[সূত্র]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="10" width="78" height="17" uuid="e5029602-1eec-404f-a5ee-059a1a1a53eb">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[(১) আপিল মামলা]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="130" y="10" width="364" height="17" uuid="5f76f919-dadd-4107-b4d9-0ab9afd3f3ca"/>
+				<textFieldExpression><![CDATA[$P{appealNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="42" y="27" width="78" height="17" uuid="c2515e54-56f8-40aa-8eb2-039e421a1b42">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<text><![CDATA[(২) পত্র নথি নং]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="130" y="27" width="364" height="17" uuid="c4526035-5bee-48b5-891e-ed97e565e679">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{orderNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="32" y="10" width="10" height="17" uuid="08aaab02-f059-4145-bcb4-fefa5023b4de">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="10" width="10" height="17" uuid="40be061a-9a42-46b0-b6a3-59dabc0a0b66">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="27" width="10" height="17" uuid="2ff3caa5-6420-4629-88c2-2a0b68fddce0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+		</band>
+		<band height="120">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="490" height="120" uuid="fb9783ca-6cd3-4ca3-9350-d1de65676c8f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["           উপযুক্ত বিষয় ও সূত্রের আলোকে আদিষ্ট হয়ে জানানো যাচ্ছে যে, (১) নং সূত্রে বর্ণিত আপিল মামলাটি আগামী " + $P{hearingDate} + " তারিখ বেলা " + $P{hearingTime} + " ঘটিকায় কাস্টমস, এক্সাইজ ও ভ্যাট আপিলাত " + ($P{benchNumber} != null ? ("ট্রাইব্যুনালের " + $P{benchNumber} + " নং বেঞ্চে") : ("ট্রাইব্যুনালে এডমিশন"))+ " শুনানির দিন ধার্য করা হয়েছে। ধার্যকৃত তারিখে আপনাকে (অথবা) ক্ষমতাপ্রাপ্ত প্রতিনিধির মাধ্যমে উক্ত শুনানিতে উপস্থিত থাকার জন্য অনুরোধ করা হলো। অন্যথায় আপিলটি আপনার অনুপস্থিতিতে একতরফা নিষ্পত্তি করা হবে।"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="100">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement x="329" y="50" width="166" height="50" uuid="9d92d085-2210-422a-afe8-e09dca14db65"/>
+				<staticText>
+					<reportElement x="50" y="30" width="116" height="20" uuid="fbc035c4-009f-491b-879e-3a023135e3ec"/>
+					<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+					<text><![CDATA[রেজিস্ট্রার ]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="10" width="210" height="30" uuid="3f2e4458-ebd6-4b66-8e04-ee3b6aa964ed"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[সিস্টেম জেনারেটেড ডকুমেন্ট, স্বাক্ষরের প্রয়োজন নেই।]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="335" y="10" width="160" height="30" uuid="d5e18c23-72ff-4192-95d6-f96bedd52e55"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["তারিখ: " + $P{currentDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

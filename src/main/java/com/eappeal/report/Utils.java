@@ -3,6 +3,7 @@ package com.eappeal.report;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DecimalStyle;
 import java.util.Locale;
@@ -76,6 +77,19 @@ public class Utils {
                 .withDecimalStyle(DecimalStyle.of(locale));
 
         return localDate.format(formatter);
+    }
+
+    public static String getBanglaTime(LocalTime localTime) {
+        if (localTime == null) {
+            return null;
+        }
+        Locale locale = new Locale.Builder().setLanguage("bn").build();
+        DateTimeFormatter formatter
+                = DateTimeFormatter.ofPattern("hh:mm")
+                .localizedBy(locale)
+                .withDecimalStyle(DecimalStyle.of(locale));
+
+        return localTime.format(formatter);
     }
 }
 
